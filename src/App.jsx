@@ -8,6 +8,6 @@ function App() {
     </>
   )
 }
-/*test doang xixixi*/
+/*test doang xixixi */
 
 export default App
