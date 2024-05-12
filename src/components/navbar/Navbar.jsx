@@ -14,7 +14,6 @@ export default function navbar() {
       <div className="login-reg profile">
         <ul>
             <li><button className='btn'>Login</button></li>
-            <li><button className='btn'>Register</button></li>
         </ul>
       </div>
     </nav>

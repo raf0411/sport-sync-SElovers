@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: #EDF1D6;
+    background-color: var(--primary-clr);
 }
 
 a{
