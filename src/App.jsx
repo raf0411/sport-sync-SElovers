@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/navbar/Navbar.jsx';
-import Hero from './components/hero/Hero.jsx';
+import CommunityPage from './components/community-page/CommunityPage.jsx';
 
 function App() {
 
   return (
     <>
       <Navbar />
-      <Hero />
+      <CommunityPage />
     </>
   )
 }
