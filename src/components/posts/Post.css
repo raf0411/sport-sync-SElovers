@@ -1,0 +1,78 @@
+@import '../../root.css';
+
+.posts-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-green-clr);
+    color: #FEFEFE;
+    max-width: 40%;
+    margin-top: 30px; /* sementara */  
+    padding: 1.5rem;
+    border-radius: 12px;
+    gap: 1rem;
+}
+
+.post hr{
+    border: none;
+    height: .5px;
+    background-color: var(--hr-clr);
+}
+
+.post .user-info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post .user-info .user-profile-pic{
+    width: 15%;
+}
+
+.post .post-description{
+    text-align: justify;
+}
+
+.post .like-count-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post .like-comment-share{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+}
+
+.post .like-comment-share .container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.post .like-comment-share .container button{
+    border: none;
+    background-color: transparent;
+    color: #FEFEFE;
+    cursor: pointer;
+}
+
+.comments .comment-container{
+    background-color: var(--primary-green-clr);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.comments .comment-container .user-name{
+    font-weight: bold;
+}
