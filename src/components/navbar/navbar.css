@@ -39,7 +39,7 @@ nav ul li{
     outline: 0;
 }
 
-.login-reg-container{
+.login-reg{
     display: flex;
     align-items: center;
     gap: 0;
