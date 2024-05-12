@@ -11,6 +11,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     z-index: 99;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .logo{
@@ -24,10 +25,18 @@ nav ul li{
     margin: 5px 20px;
     font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
+}
+
+nav ul li hr{
+    border: none;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--primary-dark-clr);
 }
 
 .nav-container{
-    padding: 12px 2% 16px 8%;
+    padding: 12px 5% 16px 8%;
 }
 
 .btn{

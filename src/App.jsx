@@ -1,11 +1,28 @@
-import { useState, useEffect } from 'react';
 import Navbar from './components/navbar/Navbar.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './pages/Home.jsx';
+import Venues from './pages/Venues.jsx';
+import Community from './pages/Community.jsx';
+import LoginRegister from './pages/LoginRegister.jsx';
 
 function App() {
 
   return (
     <>
-      <Navbar />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/venues' element={<Venues />}>
+            <Route path=':venuesId'></Route>
+          </Route>
+          <Route path='/community' element={<Community />}>
+            <Route path=':communityId'></Route>
+          </Route>
+          <Route path='/login' element={<LoginRegister />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
