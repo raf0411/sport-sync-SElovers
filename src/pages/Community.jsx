@@ -5,7 +5,6 @@ import Post from '../components/posts/Post.jsx';
 export default function Community() {
   return (
     <div>
-      <SearchBar />
       <Post />
     </div>
   )
