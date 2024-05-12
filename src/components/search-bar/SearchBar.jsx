@@ -6,7 +6,7 @@ export default function SearchBar() {
 
 
   return (
-    <div>
+    <div className='search-bar-container'>
       <input type="text" className="search-bar" placeholder='Search'/>
     </div>
   )
