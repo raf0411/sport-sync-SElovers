@@ -17,9 +17,7 @@ function App() {
           <Route path='/venues' element={<Venues />}>
             <Route path=':venuesId'></Route>
           </Route>
-          <Route path='/community' element={<Community />}>
-            <Route path=':communityId'></Route>
-          </Route>
+          <Route path='/community' element={<Community />}></Route>
           <Route path='/login' element={<LoginRegister />}></Route>
         </Routes>
       </BrowserRouter>

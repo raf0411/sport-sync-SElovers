@@ -17,6 +17,7 @@
     margin-top: 30px; /* sementara */  
     padding: 1rem;
     border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .user-post-container .user-post .post-comment{
@@ -51,12 +52,12 @@
 .user-post-container .user-post .post-img-video{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 5rem;
+    gap: 2rem;
 }
 
 .post-img-video button{
     border: none;
+    height: 40px;
     border-radius: 12px;
     padding: .5em 1em .5em 1em;
     background-color: var(--secondary-green-clr2);

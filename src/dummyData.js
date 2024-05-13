@@ -1,0 +1,44 @@
+export const Users = [
+    {
+        id: 1,
+        profilePic: "images/user-1.png",
+        group: "Yang Penting Bayar",
+        username: "rudi123",
+    },
+    {
+        id: 2,
+        profilePic: "images/user-2.png",
+        group: "The Berakers",
+        username: "kevkev22",
+    },
+    {
+        id: 3,
+        profilePic: "images/user-3.png",
+        group: "Dewa Family",
+        username: "123ovo123",
+    },
+];
+
+export const Posts = [
+    {
+        id: 1,
+        desc: "Lagi sepedahan nich..",
+        photo: "images/post-img.jpg",
+        userId: 1,
+        like: 32,
+    },
+    {
+        id: 2,
+        desc: "Yuk lari yuk lari..",
+        photo: "images/running.jpg",
+        userId: 2,
+        like: 29,
+    },
+    {
+        id: 3,
+        desc: "mbak mbak nge-gym..",
+        photo: "images/fitness.jpg",
+        userId: 3,
+        like: 12,
+    },
+];

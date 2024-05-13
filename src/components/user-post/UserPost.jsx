@@ -3,7 +3,7 @@ import './UserPost.css';
 
 import addImg from '../../assets/add-img.svg';
 import addVideo from '../../assets/add-video.svg';
-import profilePic from '../../assets/profile-user.png'
+import profilePic from '../../assets/profile-user.png';
 
 export default function UserPost() {
   return (
@@ -25,6 +25,7 @@ export default function UserPost() {
                 <img src={addVideo} alt="Add Video" className="add-btn" />
                 <p>Video</p>
               </button>
+              <button className='post-btn'>Post</button>
           </div>
         </div>
     </div>
