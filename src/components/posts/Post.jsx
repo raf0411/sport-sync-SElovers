@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Post.css';
 
 import thumbsUp from '../../assets/thumbs-up.svg';
@@ -7,7 +7,16 @@ import share from '../../assets/share.svg';
 
 import { Users } from "../../dummyData";
 
-export default function Post({post}) {
+export default function Post({ post }) {
+    
+    const [like, setLike] = useState(post.like);
+    const [isLiked, setIsLiked] = useState(false);
+
+    const handleLike = () => {
+        setLike(isLiked ? like - 1 : like + 1);
+        setIsLiked(!isLiked);
+    }
+
     return (
         <div className='posts-container'>
         <div className="post">
@@ -25,14 +34,14 @@ export default function Post({post}) {
             
             <div className="like-count-container">
                 <img src={thumbsUp} alt="like image" className='like-img'/>
-                <b><p className='post-like-count'>{post.like}</p></b>
+                <b><p className='post-like-count'>{like}</p></b>
             </div>
             
             <hr />
             
             <div className="like-comment-share">
                 <div className="container">
-                    <button className='like-btn'><img src={thumbsUp} alt="Like" /></button>
+                    <button className='like-btn' onClick={handleLike}><img src={thumbsUp} alt="Like" /></button>
                     <p>Like</p>
                 </div>
                 <div className="container">
