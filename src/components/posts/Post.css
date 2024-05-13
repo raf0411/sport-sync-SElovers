@@ -19,9 +19,9 @@
 }
 
 .post hr{
-    border: none;
-    height: .5px;
-    background-color: var(--hr-clr);
+    border: .5px solid var(--hr-clr);
+    width: 100%;
+    border-radius: 5px;
 }
 
 .post .user-info{
