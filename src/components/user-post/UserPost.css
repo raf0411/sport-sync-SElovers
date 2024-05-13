@@ -1,0 +1,65 @@
+@import '../../root.css';
+
+.user-post-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-post{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--secondary-green-clr);
+    width: 40%;
+    margin-top: 30px; /* sementara */  
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.user-post-container .user-post .post-comment{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-post-container .user-post .post-comment input{
+    max-width: 100%;
+    height: 36px;
+    padding: 0 1.5rem 0 1.5rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--primary-clr);
+}
+
+.user-post-container .user-post .post-comment input:focus{
+    outline: none;
+}
+
+.user-post-container .post-comment img{
+    width: 44px;
+}
+
+.user-post-container .user-post hr{
+    border: .5px solid var(--hr-clr);
+    width: 100%;
+    border-radius: 5px;
+}
+
+.user-post-container .user-post .post-img-video{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+.post-img-video button{
+    border: none;
+    border-radius: 12px;
+    padding: .5em 1em .5em 1em;
+    background-color: var(--secondary-green-clr2);
+    color: var(--primary-clr);
+    cursor: pointer;
+}
