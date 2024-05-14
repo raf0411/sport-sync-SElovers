@@ -19,7 +19,9 @@ function App() {
             <Route path=':venuesId'></Route>
           </Route>
           <Route path='/community' element={<Community />}></Route>
-          <Route path='/group' element={<Group />}></Route>
+          <Route path='/group' element={<Group />}>
+            <Route path=':groupId'></Route>
+          </Route>
           <Route path='/login' element={<LoginRegister />}></Route>
         </Routes>
       </BrowserRouter>

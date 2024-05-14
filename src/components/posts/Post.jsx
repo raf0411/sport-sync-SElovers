@@ -23,7 +23,7 @@ export default function Post({ post }) {
                 <div className="user-info">
                     <img src={Users.filter((u) => u.id === post.userId)[0].profilePic} alt="profile pic" className='user-profile-pic'/>
                     <div className="user-name-container">
-                        <p className="user-group-name">{Users.filter((u) => u.id === post.userId)[0].group} Group</p>
+                        <b><p className="user-group-name">{Users.filter((u) => u.id === post.userId)[0].group} Group</p></b>
                         <p className="user-name">{Users.filter((u) => u.id === post.userId)[0].username}</p>
                     </div>
                 </div>
@@ -58,8 +58,8 @@ export default function Post({ post }) {
                 
                 <div className="comments">
                     <div className="comment-container">
-                        <p className="user-name">Nama User</p>
-                        <p className="user-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolores adipisci ex, deleniti ipsum officiis nisi possimus nobis assumenda incidunt eaque natus doloribus?</p>
+                        <p className="user-name">user123</p>
+                        <p className="user-comment">Foto lu jelek bro.</p>
                     </div>
                 </div>
 
