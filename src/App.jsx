@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Venues from './pages/Venues.jsx';
 import Community from './pages/Community.jsx';
+import Group from './pages/Group.jsx';
 import LoginRegister from './pages/LoginRegister.jsx';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path=':venuesId'></Route>
           </Route>
           <Route path='/community' element={<Community />}></Route>
+          <Route path='/group' element={<Group />}></Route>
           <Route path='/login' element={<LoginRegister />}></Route>
         </Routes>
       </BrowserRouter>

@@ -42,3 +42,24 @@ export const Posts = [
         like: 12,
     },
 ];
+
+export const Groups = [
+    {
+        id: 1,
+        name: "Dewa Family",
+        memberCount: 23,
+        photo: 'images/group-tennis.jpg',
+    },
+    {
+        id: 2,
+        name: "The Berakers",
+        memberCount: 59,
+        photo: 'images/group-futsall.jpg',
+    },
+    {
+        id: 3,
+        name: "Anak Mamih",
+        memberCount: 69,
+        photo: 'images/group-basketball.jpg',
+    },
+]
