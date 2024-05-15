@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/venues',
-        element: <Venues />
+        element: <Venues />,
       },
       {
         path: '/community',

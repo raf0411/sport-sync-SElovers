@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Link, NavLink, Outlet } from 'react-router-dom';
 import ProfileImage from '../../assets/profile-user.png';
 import './navbar.css';
+import ScrollToTop from '../ScrollToTop.jsx';
 
 export default function navbar() {
 
@@ -24,6 +25,7 @@ export default function navbar() {
         
       </nav>
       <Outlet />
+      <ScrollToTop />
     </>
 
   )
