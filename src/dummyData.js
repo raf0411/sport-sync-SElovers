@@ -53,7 +53,7 @@ export const Groups = [
         admins: '',
         members: '',
         location: 'Depok, Jawa Barat',
-        description: 'Kita bukan dewa sih, cuman keren aja namanya.'
+        description: 'bukan dewa sih, keren aja namanya.'
     },
     {
         id: 2,

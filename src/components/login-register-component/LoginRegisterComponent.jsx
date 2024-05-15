@@ -1,5 +1,6 @@
 import React from 'react';
 import './LoginRegisterComponent.css';
+import { Link } from 'react-router-dom';
 
 export default function LoginRegisterComponent() {
   return (
@@ -15,12 +16,12 @@ export default function LoginRegisterComponent() {
         <button className='continue-btn'>Continue</button>
 
         <p className="create-account">
-          Create an account? <span><a href="">Click here</a></span>
+          Create an account? <span><Link href="" to='/register'>Click here</Link></span>
         </p>
         
         <div className="login-reg-agree">
             <input type="checkbox" />
-            <p>By continuing, I agree to the terms of use & privacy policy</p>   
+            <p>By continuing, I agree to the terms of use & privacy policy</p>
         </div>
 
       </div>

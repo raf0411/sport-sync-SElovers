@@ -5,6 +5,7 @@ import Venues from './pages/Venues.jsx';
 import Community from './pages/Community.jsx';
 import Group from './pages/Group.jsx';
 import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 import GroupDetail from './components/group-detail/GroupDetail.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/register',
+        element: <Register />,
       },
       {
         path: '/profile',
