@@ -10,14 +10,16 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding-bottom: 12rem;
     background-color: var(--secondary-green-clr);
     color: #FEFEFE;
+    max-width: 1200px;
+    padding-bottom: 2rem;
 }
 
 .profile-background-img{
     width: 100%;
     height: 350px;
+    overflow: hidden;
     object-fit: contain;
     /* border-radius: 0 0 12px 12px; */
 }
@@ -54,8 +56,8 @@
 .profile .container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
+    justify-content: space-evenly;
+    gap: 6rem;
 }
 
 .profile .user-info{
@@ -92,12 +94,11 @@
     gap: 1rem;
 }
 
-.profile .add-sport-btn{
+.profile .btn-container button{
     background-color: var(--primary-dark-clr);
     color: var(--primary-clr);
     display: flex;
     align-items: center;
-    align-self: center;
     border: none;
     font-size: 1.1rem;
     padding: .5rem 1.3rem ;
@@ -106,5 +107,10 @@
 }
 
 .profile .add-sport-btn img{
-    width: 45px;
+    width: 30px;
+}
+
+.profile .btn-container{
+    display: flex;
+    justify-content: space-evenly;
 }

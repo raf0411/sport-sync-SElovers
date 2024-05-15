@@ -86,11 +86,10 @@
 
 .comments .comment-container{
     background-color: var(--primary-green-clr);
+    max-width: 300px;
     border-radius: 12px;
+    font-size: .875rem;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
 }
 
 .comments .comment-container .user-name{

@@ -49,7 +49,11 @@ export default function Profile() {
 
         </div>
 
-        <button className='add-sport-btn'><img src="../public/images/add-circle.svg" alt="add" /> &nbsp; Add a Sport</button>
+        <div className="btn-container">
+          <button className='add-sport-btn'><img src="../public/images/add-circle.svg" alt="add" /> &nbsp; Add a Sport</button>
+          <button className='follow-btn'>Follow</button>
+          <button className='chat-btn'>Chat</button>
+        </div>
 
       </div>
     </div>
