@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
 import Venues from './pages/Venues.jsx';
@@ -8,6 +8,7 @@ import Login from './pages/Login.jsx';
 import GroupDetail from './components/group-detail/GroupDetail.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import Profile from './pages/Profile/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,15 +21,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/venues',
-        element: <Venues/>
+        element: <Venues />
       },
       {
         path: '/community',
-        element: <Community/>,
+        element: <Community />,
       },
       {
         path: '/group',
-        element: <Group/>,
+        element: <Group />,
       },
       {
         path: '/group/:groupId',
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <Login/>,
+        element: <Login />,
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
       },
     ]
   }

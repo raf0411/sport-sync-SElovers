@@ -20,7 +20,7 @@ export default function GroupComponent({ group }) {
                 
                 <div className="group-info">
                     <div className="container">
-                        <p className="group-name">{group.name}</p>
+                        <Link className="group-name" to={`/group/${group.id}`} key={group}>{group.name}</Link>
                         <p className="group-members-count">{group.memberCount} members</p>
                     </div>
                     

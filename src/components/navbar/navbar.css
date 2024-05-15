@@ -2,6 +2,7 @@
 
 nav{
     width: 100%;
+    height: 70px;
     background: var(--primary-green-clr);
     color: #FEFEFE;
     padding: 4px 0;
@@ -48,4 +49,17 @@ nav .login-btn{
     border: 0;
     outline: 0;
     font-weight: bold;
+}
+
+nav .profile-img{
+    width: 44px;
+    background-color: #FEFEFE;
+    border-radius: 50%;
+    padding: 0.125rem;
+}
+
+nav .active{
+    background-color: var(--secondary-green-clr);
+    padding: .325rem .825rem;
+    border-radius: 12px;
 }

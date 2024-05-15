@@ -8,7 +8,7 @@ export default function LoginRegisterComponent() {
         <h1>Login</h1>
 
         <div className="input-container">
-          <input type="text" className="email-input" placeholder='Email address'/>
+          <input type="email" className="email-input" placeholder='Email address'/>
           <input type="password" className="password-input" placeholder='Password'/>
         </div>
 
@@ -20,7 +20,7 @@ export default function LoginRegisterComponent() {
         
         <div className="login-reg-agree">
             <input type="checkbox" />
-            <p> By continuing, I agree to the terms of use & privacy policy</p>   
+            <p>By continuing, I agree to the terms of use & privacy policy</p>   
         </div>
 
       </div>

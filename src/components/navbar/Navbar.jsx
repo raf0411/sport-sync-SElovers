@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import {Link, NavLink, Outlet } from 'react-router-dom';
+import ProfileImage from '../../assets/profile-user.png';
 import './navbar.css';
 
 export default function navbar() {
 
   const [menu, setMenu] = useState("home");
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <>
       <nav className='nav-container'>
         <ul>
           <a href="#"><img src="" alt="logo" className='logo'/></a>
-          <li onClick={() => {setMenu("home")}}> <Link to='/'>Home</Link> {menu === "home" ? <hr/> : <></>} </li>
-          <li onClick={() => {setMenu("venues")}}> <Link to='/venues'>Venues</Link> {menu === "venues" ? <hr/> : <></>}</li>
-          <li onClick={() => {setMenu("community")}}> <Link to='/community'>Community</Link> {menu === "community" ? <hr/> : <></>}</li>
-          <li onClick={() => {setMenu("group")}}> <Link to='/group'>Group</Link> {menu === "group" ? <hr/> : <></>}</li>
+          <li><NavLink to='/'>Home</NavLink></li>
+          <li><NavLink to='/venues'>Venues</NavLink></li>
+          <li><NavLink to='/community'>Community</NavLink></li>
+          <li><NavLink to='/group'>Group</NavLink></li>
         </ul>
       
-        <Link to='/login'><button className='login-btn'>Login</button></Link>
+        {isLogin ? <Link to='/profile'><img src={ProfileImage} alt="profile img" className='profile-img'/></Link> : <Link to='/login'><button className='login-btn'>Login</button></Link>}
+        
+        
       </nav>
       <Outlet />
     </>
