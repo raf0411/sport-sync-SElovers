@@ -48,18 +48,33 @@ export const Groups = [
         id: 1,
         name: "Dewa Family",
         memberCount: 23,
-        photo: 'images/group-tennis.jpg',
+        photo: '/images/group-tennis.jpg',
+        type: 'Public',
+        admins: '',
+        members: '',
+        location: 'Depok, Jawa Barat',
+        description: 'Kita bukan dewa sih, cuman keren aja namanya.'
     },
     {
         id: 2,
         name: "The Berakers",
         memberCount: 59,
-        photo: 'images/group-futsall.jpg',
+        photo: '/images/group-futsall.jpg',
+        type: 'Public',
+        admins: '',
+        members: '',
+        location: 'Ciledug, Banten',
+        description: 'Mari kita berak bersama.'
     },
     {
         id: 3,
         name: "Anak Mamih",
         memberCount: 69,
-        photo: 'images/group-basketball.jpg',
+        photo: '/images/group-basketball.jpg',
+        type: 'Public',
+        admins: '',
+        members: '',
+        location: 'Surabaya, Jawa Timur',
+        description: 'Kamu anak mamih? kita juga.'
     },
 ]

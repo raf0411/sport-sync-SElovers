@@ -39,7 +39,7 @@ nav ul li hr{
     padding: 12px 5% 16px 8%;
 }
 
-.btn{
+nav .login-btn{
     background-color: var(--secondary-green-clr);
     color: var(--primary-clr);
     padding: 14px 25px;
@@ -48,10 +48,4 @@ nav ul li hr{
     border: 0;
     outline: 0;
     font-weight: bold;
-}
-
-.login-reg{
-    display: flex;
-    align-items: center;
-    gap: 0;
 }

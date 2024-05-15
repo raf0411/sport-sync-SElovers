@@ -1,17 +1,54 @@
-import Navbar from './components/navbar/Navbar.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
 import Venues from './pages/Venues.jsx';
 import Community from './pages/Community.jsx';
 import Group from './pages/Group.jsx';
-import LoginRegister from './pages/LoginRegister.jsx';
+import Login from './pages/Login.jsx';
+import GroupDetail from './components/group-detail/GroupDetail.jsx';
+import Navbar from './components/navbar/Navbar.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
+
+const router = createBrowserRouter([
+  {
+    element: <Navbar />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/venues',
+        element: <Venues/>
+      },
+      {
+        path: '/community',
+        element: <Community/>,
+      },
+      {
+        path: '/group',
+        element: <Group/>,
+      },
+      {
+        path: '/group/:groupId',
+        element: <GroupDetail />,
+      },
+      {
+        path: '/login',
+        element: <Login/>,
+      },
+    ]
+  }
+
+])
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <RouterProvider router={router} />
+      {/* <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />}></Route>
@@ -20,14 +57,13 @@ function App() {
           </Route>
           <Route path='/community' element={<Community />}></Route>
           <Route path='/group' element={<Group />}>
-            <Route path=':groupId'></Route>
+            <Route path=':groupId' element={<GroupDetail />} />
           </Route>
-          <Route path='/login' element={<LoginRegister />}></Route>
+          <Route path='/login' element={<Login />}></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   )
 }
-/*test doang xixixi */
 
 export default App

@@ -1,0 +1,89 @@
+@import '../../root.css';
+
+.group-detail .group-detail-container{
+    background-color: var(--secondary-green-clr);
+    padding-bottom: 4rem;
+    height: max-content;
+    color: #FEFEFE;
+}
+
+.group-detail .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 3rem 0;
+}
+
+.group-detail .group-detail-container .group-img{
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 0 0 4rem 4rem;
+}
+
+.group-detail .group-detail-container .sport-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    left: 1000px;
+    right: 0;
+    margin: auto;
+    top: 270px;
+    border: 6px solid var(--secondary-green-clr);
+    background-color: #FEFEFE;
+}
+
+.group-detail .group-type, .group-detail .group-member-count{
+    display: flex;
+    align-items: center;
+    gap: .625rem;
+}
+
+.group-detail .group-detail-container .group-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.group-info .group-details .member-container{
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+}
+
+.group-info .group-details .group-name{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.group-info .group-btn{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.group-info .group-btn button{
+    border: none;
+    padding: 1em 2em;
+    font-size: 1rem;
+    background-color: var(--primary-dark-clr);
+    color: #FEFEFE;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container .group-detail-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container .group-detail-info hr{
+    color: var(--hr-clr);
+}
+
