@@ -58,20 +58,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      {/* <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/venues' element={<Venues />}>
-            <Route path=':venuesId'></Route>
-          </Route>
-          <Route path='/community' element={<Community />}></Route>
-          <Route path='/group' element={<Group />}>
-            <Route path=':groupId' element={<GroupDetail />} />
-          </Route>
-          <Route path='/login' element={<Login />}></Route>
-        </Routes>
-      </BrowserRouter> */}
     </>
   )
 }
