@@ -78,3 +78,7 @@ export const Groups = [
         description: 'Anak papih ga boleh join'
     },
 ]
+
+export const Venues = [
+    
+];
