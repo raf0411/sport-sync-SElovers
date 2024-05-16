@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './GroupComponent.css';
 
 export default function GroupComponent({ group }) {
@@ -12,11 +14,13 @@ export default function GroupComponent({ group }) {
     return (
         <div className='group-container'>
             <div className='group'>
-                <img src={group.photo} alt="Group Image" />
+                <Link to={`/group/${group.id}`} key={group}>
+                    <img src={group.photo} alt="Group Image" />
+                </Link>
                 
                 <div className="group-info">
                     <div className="container">
-                        <p className="group-name">{group.name}</p>
+                        <Link className="group-name" to={`/group/${group.id}`} key={group}>{group.name}</Link>
                         <p className="group-members-count">{group.memberCount} members</p>
                     </div>
                     

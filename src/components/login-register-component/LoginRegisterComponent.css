@@ -1,0 +1,64 @@
+@import '../../root.css';
+
+.login-reg{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.login-reg-container{
+    width: 580px;
+    height: max-content;
+    background-color: #FEFEFE;
+    margin: auto;
+    padding: 40px 60px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 1rem;
+}
+
+.login-reg-container h1{
+    margin: 0px 0 20px 0;
+}
+
+.login-reg-container .input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+.login-reg-container .input-container input{
+    height: 60px;
+    width: 100%;
+    border: 1px solid #C9C9C9;
+    padding-left: 20px;
+    font-size: 1.025rem;
+    outline: none;
+    border-radius: 12px;
+}
+
+.login-reg-container .continue-btn{
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: var(--secondary-green-clr);
+    color: #FEFEFE;
+    font-weight: bold;
+}
+
+.login-reg-container .create-account span{
+    color: var(--secondary-green-clr2);
+    font-weight: bold;
+}
+
+.login-reg-container .login-reg-agree{
+    display: flex;
+    align-items: center;
+    gap: .825rem;
+    font-size: 0.925rem;
+}

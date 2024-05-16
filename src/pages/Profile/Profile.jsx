@@ -11,9 +11,9 @@ export default function Profile() {
         </div>
 
         <div className="profile-info">
-          <p className="profile-name">Aubrey Graham</p>
-          <p className="profile-username">@aubreygraham17</p>
-          <p className="profile-desc">I like kids.</p>
+          <p className="profile-name">Nama Orang</p>
+          <p className="profile-username">@usernameorang</p>
+          <p className="profile-desc">Deskripsi ini, bisa apa ajaaaa.</p>
         </div>
 
         <div className="container">
