@@ -1,12 +1,8 @@
-import Navbar from './components/navbar/Navbar.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
 import Venues from './pages/Venues.jsx';
 import Community from './pages/Community.jsx';
-<<<<<<< HEAD
-import LoginRegister from './pages/LoginRegister.jsx';
-=======
 import Group from './pages/Group.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
@@ -58,28 +54,16 @@ const router = createBrowserRouter([
   }
 
 ])
->>>>>>> 10ecbcd0ac68a6403cd8d7d13576cc4e7c475f84
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/venues' element={<Venues />}>
-            <Route path=':venuesId'></Route>
-          </Route>
-          <Route path='/community' element={<Community />}>
-            <Route path=':communityId'></Route>
-          </Route>
-          <Route path='/login' element={<LoginRegister />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </>
   )
 }
-/*test doang xixixi */
+
+// wkwkwkwkwk
 
 export default App
