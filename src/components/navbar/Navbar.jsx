@@ -17,7 +17,7 @@ export default function navbar() {
           <li><NavLink to='/'>Home</NavLink></li>
           <li><NavLink to='/venues'>Venues</NavLink></li>
           <li><NavLink to='/community'>Community</NavLink></li>
-          <li><NavLink to='/group'>Group</NavLink></li>
+          <li><NavLink to='/group'>Groups</NavLink></li>
         </ul>
       
         {isLogin ? <Link to='/profile'><img src={ProfileImage} alt="profile img" className='profile-img'/></Link> : <Link to='/login'><button className='login-btn'>Login</button></Link>}
