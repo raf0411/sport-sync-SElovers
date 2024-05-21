@@ -11,8 +11,6 @@ import Navbar from './components/navbar/Navbar.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 
-// Iss
-
 const router = createBrowserRouter([
   {
     element: <Navbar />,
@@ -56,15 +54,12 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-
   return (
     <>
       <RouterProvider router={router} />
     </>
   )
 }
-
-// wkwkwkwkwkkkkk
 
 
 export default App
