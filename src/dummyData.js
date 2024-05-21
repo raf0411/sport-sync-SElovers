@@ -80,5 +80,18 @@ export const Groups = [
 ]
 
 export const Venues = [
-    
+    {
+        id: 1,
+        name: "Backrooms Liminal",
+        photo: '/images/venue-image.jpg',
+        size: "30m x 20m",
+        location: 'Jalan Ngawur 3, Perumahan Orang Gila'
+    },
+    {
+        id: 2,
+        name: "Lapangan Boongan",
+        photo: '/images/venue-image.jpg',
+        size: "50m x 18m",
+        location: 'Jalan hantu 7, Pocong hidup'
+    }
 ];
