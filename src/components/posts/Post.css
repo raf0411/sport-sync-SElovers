@@ -10,7 +10,7 @@
 .post{
     display: flex;
     flex-direction: column;
-    background-color: var(--secondary-green-clr);
+    background-color: #609966;
     color: #FEFEFE;
     width: 40%;
     margin-top: 30px; /* sementara */  
