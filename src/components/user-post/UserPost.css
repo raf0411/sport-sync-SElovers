@@ -12,12 +12,13 @@
     justify-content: center;
     flex-direction: column;
     gap: 1rem;
-    background-color: var(--secondary-green-clr);
+    background-color: #609966;
     width: 40%;
     margin-top: 30px; /* sementara */  
     padding: 1rem;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
 }
 
 .user-post-container .user-post .post-comment{
@@ -27,7 +28,7 @@
 }
 
 .user-post-container .user-post .post-comment input{
-    max-width: 100%;
+    width: 100%;
     height: 36px;
     padding: 0 1.5rem 0 1.5rem;
     border-radius: 20px;
@@ -50,8 +51,11 @@
 }
 
 .user-post-container .user-post .post-img-video{
-    display: flex;
+    /* display: inline-flex;
     align-items: center;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 }
 
@@ -65,5 +69,27 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: .5rem;
+}
+
+@media screen and (max-width: 800px){
+    /* .user-post-container .user-post .post-img-video{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    } */
+
+    .user-post{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 378px){
+    .post-img-video button p{
+        display: none;
+    }
+    .user-post-container .user-post .post-img-video{
+        gap: .5rem;
+    }
 }
