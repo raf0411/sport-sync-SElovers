@@ -4,30 +4,6 @@ import { Link } from 'react-router-dom';
 
 export default function Register() {
 
-  const username = useRef();
-  const email = useRef();
-  const password = useRef();
-
-  const handleClick = async (e) => {
-    // e.preventDefault();
-    // if (passwordAgain.current.value !== password.current.value) {
-    //   passwordAgain.current.setCustomValidity("Passwords don't match!");
-    // } else {
-    //   const user = {
-    //     username: username.current.value,
-    //     email: email.current.value,
-    //     password: password.current.value,
-    //   };
-    //   // klo dh ada API
-    //   try {
-    //     await axios.post("/auth/register", user);
-    //     history.push("/login");
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // }
-  };
-
   return (
     <div className='login-reg'>
       <form className="login-reg-container" onSubmit={handleClick}>
