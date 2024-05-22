@@ -62,3 +62,20 @@
     gap: .825rem;
     font-size: 0.925rem;
 }
+
+.input-container .error-text:empty{
+    position: absolute;
+}
+
+.error-text{
+    color: red;
+    margin-top: -15px;
+}
+
+.input-container input{
+    padding: 0;
+}
+
+.success-message{
+    color: green;
+}
