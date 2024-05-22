@@ -1,5 +1,7 @@
 import {db} from "../db.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
 export const register = (req, res)=>{
     //check existing user
     const q = "SELECT *FROM user WHERE email = ? OR username = ? OR name = ?";

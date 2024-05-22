@@ -79,3 +79,7 @@
 .success-message{
     color: green;
 }
+
+.userexisterr{
+    color: red;
+}
