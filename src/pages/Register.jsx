@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../components/login-register-component/LoginRegisterComponent.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -8,12 +8,20 @@ export default function Register() {
     name:"",
     username:"",
     email:"",
-    password:"",
+    password: "",
   });
+
+  const [checkboxChecked, setCheckboxChecked] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = e =>{
     setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
   }
+
+  const handleCheckboxChange = e => {
+    setCheckboxChecked(e.target.checked);
+  };
 
   const handleSubmit = async e =>{
     e.preventDefault()
@@ -23,32 +31,83 @@ export default function Register() {
     }catch(err){
       console.log(err)
     }
+    setFormErrors(validate(inputs, checkboxChecked));
+    setIsSubmit(true);
+  }
+
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log(inputs);
+    }
+  }, [formErrors])
+
+  const validate = (values, isChecked) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    if (!values.name) {
+      errors.name = "Name is required!";
+    }
+    if (!values.username) {
+      errors.username = "Username is required!";
+    }
+    if (!values.email) {
+      errors.email = "Email is required!";
+    } else if (!regex.test(values.email)) {
+      errors.email = "Please input a valid email format!";
+    }
+
+    if (!values.password) {
+      errors.password = "Password is required!";
+    } else if (values.password.length < 4) {
+      errors.password = "Password must be at least 4 characters"
+    } else if (values.password.length > 12) {
+      errors.password = "Password cannot be more than 12 characters"
+    }
+
+    if (!isChecked) {
+      errors.terms = "You must agree to the terms and conditions!";
+    }
+
+    return errors;
   }
 
   return (
     <div className='login-reg'>
-      <div className="login-reg-container">
+      <form className="login-reg-container" onSubmit={handleSubmit}>
         <h1>Register</h1>
 
         <div className="input-container">
-          <input type="text" className="name-input" placeholder='Your name' name = 'name' onChange = {handleChange}/>
-          <input type="text" className="username-input" placeholder='Username'name = 'username' onChange = {handleChange}/>
-          <input type="email" className="email-input" placeholder='Email address' name = 'email' onChange = {handleChange}/>
-          <input type="password" className="password-input" placeholder='Password' name = 'password' onChange = {handleChange}/>
+          <input type="text" className="name-input" placeholder='Your name' name='name' onChange={handleChange} value={inputs.name}/>
+          <p className='error-text'>{formErrors.name}</p>
+
+          <input type="text" className="username-input" placeholder='Username' name='username' onChange={handleChange} value={inputs.username}/>
+          <p className='error-text'>{formErrors.username}</p>
+
+          <input type="email" className="email-input" placeholder='Email address' name='email' onChange={handleChange} value={inputs.email}/>
+          <p className='error-text'>{formErrors.email}</p>
+
+          <input type="password" className="password-input" placeholder='Password' name='password' onChange={handleChange} value={inputs.password}/>
+          <p className='error-text'>{formErrors.password}</p>
+
         </div>
 
-        <button onClick = {handleSubmit} className='continue-btn'>Continue</button>
+        <button type='submit' onClick={handleSubmit} className='continue-btn'>Continue</button>
+        
+        {Object.keys(formErrors).length === 0 && isSubmit ? (<div className='success-message'>Account has been created!</div>) : (<></>)}
 
         <p className="create-account">
           Already have an account? <span><Link href="" to='/login'>Login</Link></span>
         </p>
         
         <div className="login-reg-agree">
-            <input type="checkbox" />
-            <p>By continuing, I agree to the terms of use & privacy policy</p>
+          <input type="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} required/>
+          <p>By continuing, I agree to the terms of use & privacy policy</p>
         </div>
 
-      </div>
+        <p className='error-text'>{formErrors.terms}</p>
+
+      </form>
     </div>
   )
 }
