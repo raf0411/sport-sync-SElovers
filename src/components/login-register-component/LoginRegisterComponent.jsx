@@ -8,7 +8,15 @@ export default function LoginRegisterComponent() {
 
   return (
     <div className='login-reg'>
-      <form className=ame='continue-btn' type='submit'>Continue</button>
+      <form className="login-reg-container" onSubmit={handleClick}>
+        <h1>Login</h1>
+
+        <div className="input-container">
+          <input type="email" className="email-input" placeholder='Email address' required/>
+          <input type="password" className="password-input" placeholder='Password' required/>
+        </div>
+
+        <button className='continue-btn' type='submit'>Continue</button>
 
         <p className="create-account">
           Create an account? <span><Link href="" to='/register'>Click here</Link></span>
@@ -20,14 +28,6 @@ export default function LoginRegisterComponent() {
         </div>
 
       </form>
-    </div>"login-reg-container" onSubmit={handleClick}>
-        <h1>Login</h1>
-
-        <div className="input-container">
-          <input type="email" className="email-input" placeholder='Email address' required/>
-          <input type="password" className="password-input" placeholder='Password' required/>
-        </div>
-
-        <button classN
+    </div>
   )
 }
