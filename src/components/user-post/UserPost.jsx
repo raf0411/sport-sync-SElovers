@@ -17,15 +17,20 @@ export default function UserPost() {
         <hr />
         
         <div className="post-img-video">
-            <button>
-              <img src={addImg} alt="Add Image" className="add-btn" />
-              <p>Photo</p>
-            </button>
-            <button>
-              <img src={addVideo} alt="Add Video" className="add-btn" />
-              <p>Video</p>
-            </button>
-            <button className='post-btn'>Post</button>
+          <label htmlFor='file'>
+            <img src={addImg} alt="Add Image" className="add-btn" />
+            <p>Photo</p>
+            <input style={{ display: "none" }} type="file" id='file' accept='.png,.jpg,.jpeg'/>
+          </label>
+
+          <label htmlFor='file'>
+            <img src={addVideo} alt="Add Video" className="add-btn" />
+            <p>Video</p>
+            <input style={{display: "none"}} type="file" accept='.mp4,.mov,.gif'/>
+          </label>
+          <button className='post-btn'>
+            Post
+          </button>
         </div>
       </div>
     </div>

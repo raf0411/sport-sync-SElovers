@@ -18,6 +18,7 @@
 .error-page .error-page-container h1{
     font-size: 4rem;
     color: var(--primary-dark-clr);
+    text-align: center;
 }
 
 .error-page .error-page-container .link{
