@@ -7,7 +7,7 @@
 }
 
 .login-reg-container{
-    width: 580px;
+    width: 50%;
     height: max-content;
     background-color: #FEFEFE;
     margin: auto;
@@ -82,4 +82,10 @@
 
 .userexisterr{
     color: red;
+}
+
+@media screen and (max-width: 700px){
+    .login-reg-container{
+        width: 90%;
+    }
 }
