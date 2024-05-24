@@ -28,12 +28,6 @@ export default function Register() {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    try {
-      await axios.post("auth/register", inputs);
-    } catch (err) {
-      setFormErrors(err.response.data);
-    }
-
     setFormErrors(validate(inputs, checkboxChecked));
     setIsSubmit(true);
   };
