@@ -39,7 +39,7 @@ export default function Register() {
 
   const registerUser = async () => {
     try {
-      const response = await axios.post("http://localhost:8800/backend/auth/register", inputs);
+      const response = await axios.post("http://localhost:8801/backend/auth/register", inputs);
       console.log(response.data);
       navigate("/login");
     } catch (error) {
