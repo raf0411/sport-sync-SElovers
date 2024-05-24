@@ -1,13 +1,13 @@
 @import '../../root.css';
 
 .login-reg{
-    width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
 .login-reg-container{
     width: 50%;
+    max-width: 600px;
     height: max-content;
     background-color: #FEFEFE;
     margin: auto;
