@@ -100,6 +100,24 @@
     font-weight: bold;
 }
 
+.post .container .like-btn img{
+    background-color: #bebebe;
+    border-radius: 70%;
+    padding:5px;
+}
+
+.post .container .comment-btn img{
+    background-color: #bebebe;
+    border-radius: 70%;
+    padding:5px;
+}
+
+.post .container .share-btn img{
+    background-color: #bebebe;
+    border-radius: 70%;
+    padding:5px;
+}
+
 @media screen and (max-width: 844px) {
     .post{
         width: 90%;
