@@ -4,6 +4,7 @@ import ProfileImage from '../../assets/profile-user.png';
 import './navbar.css';
 import ScrollToTop from '../ScrollToTop.jsx';
 import MenuIcon from '../../assets/menu-icon.svg';
+import Logo from '../../assets/logo.png';
 
 export default function navbar() {
   const menuRef = useRef();
@@ -18,9 +19,9 @@ export default function navbar() {
   return (
     <header>
       <nav className='nav-container'>
-        <img src={MenuIcon} alt="" className='nav-dropdown' onClick={dropdownToggle}/>
+        <img src={MenuIcon} alt="hamburger-menu" className='nav-dropdown' onClick={dropdownToggle}/>
         <ul ref={menuRef}>
-          <li><Link to='/'><img src="" alt="logo" className='logo'/></Link></li>
+          <li><Link to='/'><img src={Logo} alt="logo" className='logo'/></Link></li>
           <li><NavLink to='/'>Home</NavLink></li>
           <li><NavLink to='/venues'>Venues</NavLink></li>
           <li><NavLink to='/community'>Community</NavLink></li>
