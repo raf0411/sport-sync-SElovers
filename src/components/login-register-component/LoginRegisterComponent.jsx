@@ -62,7 +62,7 @@ export default function LoginRegisterComponent() {
   }
 
   return (
-    <div className='login-reg'>
+    <div className='login'>
       <form className="login-reg-container" onSubmit={handleSubmit}>
         <h1>Login</h1>
 

@@ -4,7 +4,7 @@ header nav{
     width: 100%;
     height: 70px;
     background: var(--primary-green-clr);
-    color: #FEFEFE;
+    color: #000000;
     padding: 4px 0;
     top: 0;
     left: 0;
@@ -12,18 +12,42 @@ header nav{
     align-items: center;
     justify-content: space-between;
     z-index: 99;
+    position: fixed;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+nav .home:hover {
+    color: #4CAB60;
+}
+
+nav .venues:hover {
+    color: #4CAB60;
+}
+  
+nav .community:hover {
+    color: #4CAB60; 
+}
+  
+nav .groups:hover {
+    color: #4CAB60; 
 }
 
 .logo{
     width: 180px;
-    margin-right: 24px;
+    margin-right: 14px;
+    margin-top: 15px;
+}
+
+nav ul{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
 }
 
 nav ul li{
     display: inline-block;
     list-style: none;
-    margin: 5px 20px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -65,8 +89,8 @@ nav .nav-extra{
 }
 
 nav .active{
-    background-color: var(--secondary-green-clr);
-    padding: .325rem .825rem;
+    color: var(--secondary-green-clr);
+    /* padding: .325rem .825rem; */
     border-radius: 12px;
 }
 
@@ -85,10 +109,6 @@ nav .active{
 @media only screen and (max-width: 1280px) {
     nav{
         padding: 12px 50px;
-    }
-
-    nav .logo{
-        width: 40px;
     }
 
     nav ul{
@@ -116,7 +136,7 @@ nav .active{
         justify-content: center;
         top: 70px;
         left: 0;
-        background-color: var(--primary-green-clr);
+        background-color: #FEFEFE;
         z-index: 99;
     }
 
@@ -125,6 +145,7 @@ nav .active{
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        padding-left: 2rem;
     }
 
     .nav-dropdown.open{
