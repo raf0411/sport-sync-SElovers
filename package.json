@@ -21,13 +21,9 @@
     "react": "^18.2.0",
     "react-datepicker": "^6.9.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-modal": "^3.16.1",
-    "react-router-dom": "^6.23.1"
-=======
     "react-router-dom": "^6.23.1",
     "yarn": "^1.22.22"
->>>>>>> e393d0e653b16d42e48efae15c2021436956851d
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
