@@ -11,7 +11,7 @@ export default function UserPost() {
       <div className="user-post">
         <div className="post-comment">
           <img src={profilePic} alt="Profile Pic" className="profile-pic" />
-          <input type="text" className="user-comment" placeholder='Add post...'/>
+          <input type="text" className="user-comment2" placeholder='Add post...'/>
         </div>
         
         <hr />

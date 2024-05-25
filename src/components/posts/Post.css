@@ -10,8 +10,8 @@
 .post{
     display: flex;
     flex-direction: column;
-    background-color: #609966;
-    color: #FEFEFE;
+    background-color: #ffffff;
+    color: #000000;
     width: 40%;
     margin-top: 30px; /* sementara */  
     padding: 1.5rem;
@@ -89,7 +89,7 @@
 }
 
 .comments .comment-container{
-    background-color: var(--primary-green-clr);
+    background-color: var(--secondary-green-clr2);
     max-width: 300px;
     border-radius: 12px;
     font-size: .875rem;

@@ -12,9 +12,9 @@
     justify-content: center;
     flex-direction: column;
     gap: 1rem;
-    background-color: #609966;
+    background-color: #ffffff;
     width: 40%;
-    margin-top: 30px; /* sementara */  
+    margin-top: 7rem; /* sementara */  
     padding: 1rem;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -33,7 +33,7 @@
     padding: 0 1.5rem 0 1.5rem;
     border-radius: 20px;
     border: none;
-    background-color: var(--primary-clr);
+    background-color: #e9e9e9;
 }
 
 .user-post-container .user-post .post-comment input:focus{
@@ -62,8 +62,8 @@
     height: 40px;
     border-radius: 12px;
     padding: .5em 1em .5em 1em;
-    background-color: var(--secondary-green-clr2);
-    color: #FEFEFE;
+    background-color: #4CAB60;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     align-items: center;
