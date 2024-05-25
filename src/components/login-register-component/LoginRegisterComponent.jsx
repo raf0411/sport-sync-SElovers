@@ -1,14 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './LoginRegisterComponent.css';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import navbar from '../navbar/Navbar';
-import { AuthContext } from '../../AuthContext';
 
 export default function LoginRegisterComponent() {
-  const { setIsLogin } = useContext(AuthContext);
   const [inputs, setInputs] = useState({
-    email: "",
+    email:"",
     password: "",
   });
 
@@ -16,34 +12,28 @@ export default function LoginRegisterComponent() {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [loginError, setLoginError] = useState(null); // State for login error
 
-  const handleChange = e => {
-    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = e =>{
+    setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
   }
+
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      navigate("/");
+    }
+  }, [formErrors, isSubmit, navigate]);
 
   const handleCheckboxChange = e => {
     setCheckboxChecked(e.target.checked);
   };
 
   const handleSubmit = async e => {
-    e.preventDefault();
-    const errors = validate(inputs, checkboxChecked);
-    setFormErrors(errors);
     setIsSubmit(true);
-    if (Object.keys(errors).length === 0) {
-      handleLogin(); // Perform login if there are no validation errors
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      navigate("/");
     }
-  }
-
-  const handleLogin = async () => {
-    try {
-      const res = await axios.post("http://localhost:8801/backend/auth/login", inputs);
-      setIsLogin(true);
-      navigate("/"); // Navigate to homepage on successful login
-    } catch (err) {
-      setLoginError(err.response?.data || "Login failed. Please try again."); // Set login error message
-    }
+    e.preventDefault()
+    setFormErrors(validate(inputs, checkboxChecked));
   }
 
   const validate = (values, isChecked) => {
@@ -59,9 +49,9 @@ export default function LoginRegisterComponent() {
     if (!values.password) {
       errors.password = "Password is required!";
     } else if (values.password.length < 4) {
-      errors.password = "Password must be at least 4 characters";
+      errors.password = "Password must be at least 4 characters"
     } else if (values.password.length > 12) {
-      errors.password = "Password cannot be more than 12 characters";
+      errors.password = "Password cannot be more than 12 characters"
     }
 
     if (!isChecked) {
@@ -84,22 +74,21 @@ export default function LoginRegisterComponent() {
           <p className='error-text'>{formErrors.password}</p>
         </div>
 
-        <button className='continue-btn' type='submit'>Continue</button>
-        
-        {loginError && <p className='error-text'>{loginError}</p>} {/* Display login error */}
+        <button className='continue-btn' type='submit' onClick={handleSubmit}>Continue</button>
 
         <p className="create-account">
-          Create an account? <span><Link to='/register'>Click here</Link></span>
+          Create an account? <span><Link href="" to='/register'>Click here</Link></span>
         </p>
-
+        
         <div className="login-reg-agree">
-          <input type="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} required />
-          <p>By continuing, I agree to the terms of use & privacy policy</p>
+            <input type="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} required/>
+            <p>By continuing, I agree to the terms of use & privacy policy</p>
         </div>
 
         <p className='error-text'>{formErrors.terms}</p>
 
       </form>
     </div>
-  );
+  )
 }
+

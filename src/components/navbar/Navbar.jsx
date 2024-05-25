@@ -1,16 +1,14 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import {Link, NavLink, Outlet } from 'react-router-dom';
 import ProfileImage from '../../assets/profile-user.png';
 import './navbar.css';
 import ScrollToTop from '../ScrollToTop.jsx';
 import MenuIcon from '../../assets/menu-icon.svg';
-import { AuthContext } from '../../AuthContext.jsx';
 
 export default function navbar() {
   const menuRef = useRef();
-  const { isLogin } = useContext(AuthContext); 
   const [menu, setMenu] = useState("home");
-  // let [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   const dropdownToggle = (e) => {
     menuRef.current.classList.toggle("nav-menu-visible");
@@ -33,6 +31,9 @@ export default function navbar() {
           {isLogin ? <Link to='/profile'><img src={ProfileImage} alt="profile img" className='profile-img' /></Link> : <Link to='/login'><button className='login-btn'>Login</button></Link>}
         </div>
       </nav>
+
+
+
       <Outlet />
       <ScrollToTop />
     </header>
