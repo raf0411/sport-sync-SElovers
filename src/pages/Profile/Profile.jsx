@@ -51,8 +51,10 @@ export default function Profile() {
 
         <div className="btn-container">
           <button className='add-sport-btn'><img src="../public/images/add-circle.svg" alt="add" /> &nbsp; Add a Sport</button>
+          <button className='edit-btn'>Edit Profile</button>
           <button className='follow-btn'>Follow</button>
           <button className='chat-btn'>Chat</button>
+          <button className='chat-btn'>Logout</button>
         </div>
 
       </div>
