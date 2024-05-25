@@ -4,7 +4,7 @@ import ProfileImage from '../../assets/profile-user.png';
 import './navbar.css';
 import ScrollToTop from '../ScrollToTop.jsx';
 import MenuIcon from '../../assets/menu-icon.svg';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo.jpg';
 
 export default function navbar() {
   const menuRef = useRef();
