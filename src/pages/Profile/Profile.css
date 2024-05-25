@@ -4,16 +4,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .profile-container .profile{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-color: var(--secondary-green-clr);
-    color: #FEFEFE;
+    background-color: #FEFEFE;
+    color: #000000;
     max-width: 1200px;
-    padding-bottom: 2rem;
+    padding-bottom: 0rem;
+    margin-top: 80px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .profile-background-img{
@@ -95,7 +98,7 @@
 }
 
 .profile .btn-container button{
-    background-color: var(--primary-dark-clr);
+    background-color: var(--secondary-green-clr);
     color: var(--primary-clr);
     display: flex;
     align-items: center;

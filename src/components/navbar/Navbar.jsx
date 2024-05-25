@@ -21,11 +21,13 @@ export default function navbar() {
       <nav className='nav-container'>
         <img src={MenuIcon} alt="hamburger-menu" className='nav-dropdown' onClick={dropdownToggle}/>
         <ul ref={menuRef}>
-          <li><Link to='/'><img src={Logo} alt="logo" className='logo'/></Link></li>
-          <li><NavLink to='/'>Home</NavLink></li>
-          <li><NavLink to='/venues'>Venues</NavLink></li>
-          <li><NavLink to='/community'>Community</NavLink></li>
-          <li><NavLink to='/group'>Groups</NavLink></li>
+
+        <li><Link to='/'><img src="/src/assets/logo.jpg" alt="logo" activeClassName = "home" className='logo'/></Link></li>
+          <li><NavLink to='/' activeClassName = "home" className="home">Home</NavLink></li>
+          <li><NavLink to='/venues' activeClassName="active" className="venues">Venues</NavLink></li>
+          <li><NavLink to='/community' activeClassName="active" className="community">Community</NavLink></li>
+          <li><NavLink to='/group' activeClassName="active" className="groups">Groups</NavLink></li>
+
         </ul>
       
         <div className="nav-extra">

@@ -17,7 +17,7 @@
 
 .error-page .error-page-container h1{
     font-size: 4rem;
-    color: var(--primary-dark-clr);
+    color: var(--secondary-dark-clr);
     text-align: center;
 }
 
