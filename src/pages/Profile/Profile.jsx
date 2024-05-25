@@ -55,6 +55,7 @@ export default function Profile() {
           <button className='follow-btn'>Follow</button>
           <button className='chat-btn'>Chat</button>
           <button className='chat-btn'>Logout</button>
+          
         </div>
 
       </div>
