@@ -82,16 +82,35 @@ export const Groups = [
 export const Venues = [
     {
         id: 1,
-        name: "Backrooms Liminal",
+        name: "BINUS University",
         photo: '/images/venue-image.jpg',
-        size: "30m x 20m",
-        location: 'Jalan Ngawur 3, Perumahan Orang Gila'
+        map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.306945664692!2d106.64645451100024!3d-6.22319746092441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb20a9906e13%3A0xf75c5296d0a385e4!2sBINUS%20University%2C%20Kampus%20BINUS%20%40Alam%20Sutera!5e0!3m2!1sen!2sid!4v1716559733403!5m2!1sen!2sid",
+        open_time: {
+            Monday: '9:00 - 17:00',
+            Tuesday: '9:00 - 17:00',
+            Wednesday: '9:00 - 17:00',
+            Thursday: '9:00 - 17:00',
+            Friday: '9:00 - 17:00',
+            Saturday: '9:00 - 17:00',
+            Sunday: 'Closed'
+          },
+        location: 'Jl. Jalur Sutera Bar. No.Kav. 21, RT.001/RW.004, Panunggangan, Kec. Pinang, Kota Tangerang, Banten 15143',
+        contact: '081122333123'
     },
     {
         id: 2,
         name: "Lapangan Boongan",
         photo: '/images/venue-image.jpg',
-        size: "50m x 18m",
-        location: 'Jalan hantu 7, Pocong hidup'
+        open_time: {
+            Monday: '9:00 - 17:00',
+            Tuesday: '9:00 - 17:00',
+            Wednesday: '9:00 - 17:00',
+            Thursday: '9:00 - 17:00',
+            Friday: '9:00 - 17:00',
+            Saturday: '9:00 - 17:00',
+            Sunday: 'Closed'
+          },
+        location: 'Jalan hantu 7, Pocong hidup',
+        contact: '085658980078'
     }
 ];

@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
 import Venues from './pages/Venues.jsx';
+import VenueDetail from './components/venue-detail/VenueDetail.jsx';
 import Community from './pages/Community.jsx';
 import Group from './pages/Group.jsx';
 import Login from './pages/Login.jsx';
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/venues',
         element: <Venues />,
+      },
+      {
+        path: '/venues/:venueId',
+        element: <VenueDetail />,
       },
       {
         path: '/community',
