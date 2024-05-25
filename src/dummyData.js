@@ -106,8 +106,8 @@ export const Venues = [
             Tuesday: '9:00 - 17:00',
             Wednesday: '9:00 - 17:00',
             Thursday: '9:00 - 17:00',
-            Friday: '9:00 - 17:00',
-            Saturday: '9:00 - 17:00',
+            Friday: '10:00 - 15:00',
+            Saturday: 'Closed',
             Sunday: 'Closed'
           },
         location: 'Jalan hantu 7, Pocong hidup',
