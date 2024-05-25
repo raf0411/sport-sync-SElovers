@@ -8,7 +8,7 @@ import MenuIcon from '../../assets/menu-icon.svg';
 export default function navbar() {
   const menuRef = useRef();
   const [menu, setMenu] = useState("home");
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const dropdownToggle = (e) => {
     menuRef.current.classList.toggle("nav-menu-visible");
