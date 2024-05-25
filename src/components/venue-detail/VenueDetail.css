@@ -1,0 +1,262 @@
+@import '../../root.css';
+
+.venue-detail .venue-detail-container{
+    background-color: var(--secondary-green-clr);
+    padding-bottom: 4rem;
+    height: max-content;
+    color: #FEFEFE;
+}
+
+.venue-detail .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 3rem 0;
+}
+
+.venue-detail .venue-detail-container .venue-img{
+    width: 50%;
+    height: 400px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 0 0 0 4rem;
+}
+.venue-detail .venue-detail-container .venue-map{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 0 0 0 0;
+}
+
+.venue-detail .venue-detail-container .sport-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    left: 1000px;
+    right: 0;
+    margin: auto;
+    top: 270px;
+    border: 6px solid var(--secondary-green-clr);
+    background-color: #FEFEFE;
+}
+
+.venue-detail .venue-type, .venue-detail .venue-member-count{
+    display: flex;
+    align-items: center;
+    gap: .625rem;
+}
+
+.venue-detail .venue-detail-container .venue-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.venue-info .venue-details .member-container{
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+}
+
+.venue-info .venue-details .venue-name{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.venue-info .venue-btn{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.venue-info .venue-btn button{
+    border: none;
+    padding: 1em 2em;
+    font-size: 1rem;
+    background-color: var(--primary-dark-clr);
+    color: #FEFEFE;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container .venue-detail-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container .venue-detail-info hr{
+    color: var(--hr-clr);
+}
+
+.venue-detail .App {
+    font-family: sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+  }
+  
+.venue-detail .images-container {
+    display: flex;
+    max-width: 500px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    transition: scroll 0.3s ease-in-out;
+  }
+  
+.venue-detail  .image {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  
+.venue-detail .nav-btn {
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background-color: #c3c3c3;
+    border-radius: 6px;
+    height: 200px;
+    width: 30px;
+    margin: 5px;
+  }
+
+  .open-time-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.open-time-table th, .open-time-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.open-time-table th {
+  background-color: #609966;
+  font-weight: bold;
+}
+
+.book-now-button {
+    background-color: #4CAF50;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.book-now-button:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .modal-content {
+    display: flex;
+  }
+  
+  .availability-info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .selected-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .day-name {
+    font-weight: bold;
+  }
+  
+  .full-date {
+    margin-top: 0;
+  }
+  
+  .available {
+    color: green;
+  }
+  
+  .closed {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .modal-book-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .modal-book-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .close-modal-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .close-modal-button:hover {
+    transform: scale(1.1);
+    color: #f44336;
+  }
