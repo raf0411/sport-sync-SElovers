@@ -1,10 +1,11 @@
 @import '../../root.css';
 
 .group-detail .group-detail-container{
-    background-color: var(--secondary-green-clr);
+    background-color: #ffffff;
     padding-bottom: 4rem;
     height: max-content;
-    color: #FEFEFE;
+    color: #000000;
+    margin-top: 90px;
 }
 
 .group-detail .container{
@@ -70,7 +71,7 @@
     border: none;
     padding: 1em 2em;
     font-size: 1rem;
-    background-color: var(--primary-dark-clr);
+    background-color: #4CAB60;
     color: #FEFEFE;
     border-radius: 24px;
     cursor: pointer;
