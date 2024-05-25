@@ -1,13 +1,13 @@
 @import '../../root.css';
 
 .login-reg{
-    width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
 .login-reg-container{
-    width: 580px;
+    width: 50%;
+    max-width: 600px;
     height: max-content;
     background-color: #FEFEFE;
     margin: auto;
@@ -61,4 +61,31 @@
     align-items: center;
     gap: .825rem;
     font-size: 0.925rem;
+}
+
+.input-container .error-text:empty{
+    position: absolute;
+}
+
+.error-text{
+    color: red;
+    margin-top: -15px;
+}
+
+.input-container input{
+    padding: 0;
+}
+
+.success-message{
+    color: green;
+}
+
+.userexisterr{
+    color: red;
+}
+
+@media screen and (max-width: 700px){
+    .login-reg-container{
+        width: 90%;
+    }
 }

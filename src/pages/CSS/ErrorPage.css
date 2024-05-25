@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
+    width: 100%;
 }
 
 .error-page .error-page-container{
@@ -17,6 +18,7 @@
 .error-page .error-page-container h1{
     font-size: 4rem;
     color: var(--primary-dark-clr);
+    text-align: center;
 }
 
 .error-page .error-page-container .link{
