@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './LoginRegisterComponent.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import navbar from '../navbar/Navbar';
+import { AuthContext } from '../../AuthContext';
 
 export default function LoginRegisterComponent() {
+  const { setIsLogin } = useContext(AuthContext);
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -36,6 +39,7 @@ export default function LoginRegisterComponent() {
   const handleLogin = async () => {
     try {
       const res = await axios.post("http://localhost:8801/backend/auth/login", inputs);
+      setIsLogin(true);
       navigate("/"); // Navigate to homepage on successful login
     } catch (err) {
       setLoginError(err.response?.data || "Login failed. Please try again."); // Set login error message

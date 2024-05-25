@@ -27,6 +27,7 @@ export default function Register() {
 
   const handleSubmit = async e => {
     e.preventDefault();
+
     setFormErrors(validate(inputs, checkboxChecked));
     setIsSubmit(true);
   };
