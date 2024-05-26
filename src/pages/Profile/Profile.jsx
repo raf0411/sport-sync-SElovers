@@ -26,12 +26,12 @@ export default function Profile() {
             </div>
 
             <div className="user-info-container">
-              <img src="../public/images/location.svg" alt="city" />
+              <img src="../public/images/country.svg" alt="country" />
               <p className='user-from'>&nbsp; Indonesia</p>
             </div>
             
             <div className="user-info-container">
-              <img src="../public/images/male-gender.svg" alt="city" />
+              <img src="../public/images/male-gender.svg" alt="gender" />
               <p className='user-gender'>&nbsp; Male</p> 
             </div>
           </div>
@@ -52,8 +52,9 @@ export default function Profile() {
         <div className="btn-container">
           <button className='add-sport-btn'><img src="../public/images/add-circle.svg" alt="add" /> &nbsp; Add a Sport</button>
           <button className='edit-btn'>Edit Profile</button>
-          <button className='follow-btn'>Follow</button>
-          <button className='chat-btn'>Chat</button>
+          {/* kalo profile lain */}
+          {/* <button className='follow-btn'>Follow</button> */}
+          {/* <button className='chat-btn'>Chat</button>  */}
           <button className='chat-btn'>Logout</button>
           
         </div>
