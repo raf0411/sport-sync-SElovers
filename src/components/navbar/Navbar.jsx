@@ -37,15 +37,12 @@ export default function navbar() {
         <div className="nav-extra">
           {currentUser
             ?
-            <Link to='/profile'><img src={ProfileImage} alt="profile img" className='profile-img' /></Link>
+            (<Link to='/profile'><img src={ProfileImage} alt="profile img" className='profile-img' /></Link>)
             :
-            <Link to='/login'><button className='login-btn'>Login</button></Link>
+            (<Link to='/login'><button className='login-btn'>Login</button></Link>)
           }
         </div>
       </nav>
-
-
-
       <Outlet />
       <ScrollToTop />
     </header>

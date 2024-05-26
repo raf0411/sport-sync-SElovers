@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Profile.css';
+import { AuthContext } from '../../context/authContext';
 
 export default function Profile() {
+  const { currentUser, logout } = useContext(AuthContext);
+
   return (
     <div className='profile-container'>
       <div className="profile">
@@ -11,9 +14,9 @@ export default function Profile() {
         </div>
 
         <div className="profile-info">
-          <p className="profile-name">Nama Orang</p>
-          <p className="profile-username">@usernameorang</p>
-          <p className="profile-desc">Deskripsi ini, bisa apa ajaaaa.</p>
+          <p className="profile-name">{currentUser?.name}</p>
+          <p className="profile-username">@{currentUser?.username}</p>
+          <p className="profile-desc">{currentUser?.description}</p>
         </div>
 
         <div className="container">
@@ -22,31 +25,35 @@ export default function Profile() {
 
             <div className="user-info-container">
               <img src="../public/images/city.svg" alt="city" />
-              <p className='user-city'>&nbsp; Jakarta</p>
+              <p className='user-city'>&nbsp; {currentUser?.city}</p>
             </div>
 
             <div className="user-info-container">
               <img src="../public/images/country.svg" alt="country" />
-              <p className='user-from'>&nbsp; Indonesia</p>
+              <p className='user-from'>&nbsp; {currentUser?.country}</p>
             </div>
             
             <div className="user-info-container">
-              <img src="../public/images/male-gender.svg" alt="gender" />
-              <p className='user-gender'>&nbsp; Male</p> 
+              {currentUser ?
+                (<img src={`../public/images/${currentUser?.gender}-gender.svg`} alt="gender" />)
+                : 
+                (<span>?</span>)
+                }
+              
+              <p className='user-gender'>&nbsp; {currentUser?.gender}</p> 
             </div>
           </div>
 
           <div className="user-follower">
             <div className="follower-container">
               <p className='user-follower-text'>Followers </p>
-              <p className="follower-count">69</p>
+              <p className="follower-count">{currentUser?.followers}</p>
             </div>
             <div className="following-container">
               <p className='user-following-text'>Following </p>
-              <p className="following-count">1</p>
+              <p className="following-count">{currentUser?.following}</p>
             </div>
           </div>
-
         </div>
 
         <div className="btn-container">
@@ -55,8 +62,7 @@ export default function Profile() {
           {/* kalo profile lain */}
           {/* <button className='follow-btn'>Follow</button> */}
           {/* <button className='chat-btn'>Chat</button>  */}
-          <button className='chat-btn'>Logout</button>
-          
+          <button className='chat-btn' onClick={logout}>Logout</button>
         </div>
 
       </div>
