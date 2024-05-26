@@ -15,6 +15,7 @@ export default function LoginRegisterComponent() {
   const [isSubmit, setIsSubmit] = useState(false);
   const { login } = useContext(AuthContext);
 
+
   const handleChange = e =>{
     setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
   }
