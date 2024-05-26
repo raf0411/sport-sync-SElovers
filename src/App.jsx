@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
-import { AuthProvider } from './AuthContext.jsx';
 import Venues from './pages/Venues.jsx';
 import VenueDetail from './components/venue-detail/VenueDetail.jsx';
 import Community from './pages/Community.jsx';
@@ -62,9 +61,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <AuthProvider>
+    <>
       <RouterProvider router={router} />
-    </AuthProvider>
+    </>
   )
 }
 
