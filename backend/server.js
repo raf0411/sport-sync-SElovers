@@ -16,6 +16,6 @@ app.use('/backend/auth', authRoutes);
 app.use('/backend/user', userRoutes);
 app.use('/backend/post', postRoutes);
 
-app.listen(8801, () => {
-    console.log("Connected to backend on port 8801");
+app.listen(8802, () => {
+    console.log("Connected to backend on port 8802");
 });
