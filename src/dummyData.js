@@ -49,7 +49,7 @@ export const Groups = [
         name: "Dewa Family",
         memberCount: 23,
         photo: '/images/group-tennis.jpg',
-        type: 'Public',
+        type: 'Private',
         admins: '',
         members: '',
         location: 'Depok, Jawa Barat',

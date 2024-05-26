@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    margin-bottom: 50px;
 }
 
 .post{
@@ -99,6 +99,24 @@
 .comments .comment-container .user-name{
     font-weight: bold;
 }
+
+/* .post .container .like-btn img{
+    background-color: #bebebe;
+    border-radius: 70%;
+    padding:5px;
+}
+
+.post .container .comment-btn img{
+    background-color: #bebebe;
+    border-radius: 70%;
+    padding:5px;
+}
+
+.post .container .share-btn img{
+    background-color: #bebebe;
+    border-radius: 70%;
+    padding:5px;
+} */
 
 @media screen and (max-width: 844px) {
     .post{

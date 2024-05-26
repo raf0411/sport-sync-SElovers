@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './LoginRegisterComponent.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/authContext.jsx';
 
 export default function LoginRegisterComponent() {
   const [inputs, setInputs] = useState({
@@ -12,6 +13,8 @@ export default function LoginRegisterComponent() {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const { login } = useContext(AuthContext);
+
 
   const handleChange = e =>{
     setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
@@ -28,11 +31,12 @@ export default function LoginRegisterComponent() {
   };
 
   const handleSubmit = async e => {
+    e.preventDefault()
     setIsSubmit(true);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
+      await login(inputs);
       navigate("/");
     }
-    e.preventDefault()
     setFormErrors(validate(inputs, checkboxChecked));
   }
 
