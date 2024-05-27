@@ -1,9 +1,10 @@
 import React from 'react';
 import SearchBar from '../components/search-bar/SearchBar.jsx';
-import { BookedVenues, Rooms } from '../dummyData.js';
+import { BookedVenues, Rooms, Activity } from '../dummyData.js';
 import HomeBooking from '../components/Home-Booking/HomeBooking.jsx';
 import HomeRooms from '../components/Home-Rooms/HomeRooms.jsx';
 import './CSS/Home.css';
+import HomeActivity from '../components/Home-Activity/HomeActivity.jsx';
 
 export default function Home() {
   return (
@@ -24,6 +25,14 @@ export default function Home() {
               <HomeRooms key={R.id} Rooms={R} />
             ))}
           </div>
+        </div>
+      </div>
+      <div className="ActivityContainer">
+        <h2>Activities Nearby</h2>
+        <div className="ActivityField">
+            {Activity.map((A) => (
+              <HomeActivity key={A.id} Activity={A} />
+            ))}
         </div>
       </div>
         

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Home-Booking.css';
+import './HomeBooking.css';
 
 export default function HomeBooking({ BookedVenues }) {
     return (

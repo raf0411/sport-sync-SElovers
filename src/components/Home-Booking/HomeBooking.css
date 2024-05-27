@@ -3,7 +3,7 @@
 .BookedContainer{
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin-top: 50px; /* sementara */
     margin-bottom: 50px;
 }
