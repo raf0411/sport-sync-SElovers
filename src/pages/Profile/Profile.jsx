@@ -16,7 +16,7 @@ export default function Profile() {
     <div className='profile-container'>
       <div className="profile">
         <div className="profile-images">
-          <img className="profile-background-img" src='../../public/images/group-futsall.jpg'></img>
+          <img className="profile-background-img" src={currentUser?.backgroundPic}></img>
           {currentUser ?
             <img className="profile-profile-img" src={currentUser.profilePic}></img> : 
             <img className="profile-profile-img" src='../../public/images/profile-user.png'></img>
