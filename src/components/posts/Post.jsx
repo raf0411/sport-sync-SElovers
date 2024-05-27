@@ -55,6 +55,7 @@ export default function Post({ post }) {
                 <p className="post-description">{post.desc}</p>
 
                 <img src={"./upload/" + post.img} alt="" className='post-img' />
+                <img src={post.img} alt="" className='post-img' />
 
                 <div className="like-count-container">
                     <img src={thumbsUp} alt="like image" className='like-img' />

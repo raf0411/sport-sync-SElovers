@@ -142,16 +142,18 @@ body.active-profile{
     top: 50%;
     left: 50%;
     width: 90%;
+    height: 90%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
     background: #f1f1f1;
-    padding: 2rem;
     border-radius: .5rem;
     max-width: 600px;
     min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    overflow: scroll;
+    padding: 2rem;
 }
 
 .popup .content .form{

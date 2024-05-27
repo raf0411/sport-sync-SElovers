@@ -4,21 +4,17 @@ import { AuthContext } from '../../context/authContext.jsx';
 import { useNavigate } from 'react-router-dom';
 import addImg from '../../assets/add-img.svg';
 
-
 export default function Profile() {
   const { currentUser, logout } = useContext(AuthContext);
-  const [cover, setCover] = useState(null);
-  const [profile, setProfile] = useState(null);
-
+  const [popUp, setPopUp] = useState(false);
   const [inputs, setInputs] = useState({
     name: "",
     username: "",
     city: "",
     country: "",
     gender: "",
+    desc: "",
   });
-
-  const [popUp, setPopUp] = useState(false);
 
   const togglePopUp = () => {
     setPopUp(!popUp);
@@ -64,7 +60,7 @@ export default function Profile() {
         <div className="profile-info">
           <p className="profile-name">{currentUser?.name}</p>
           <p className="profile-username">@{currentUser?.username}</p>
-          <p className="profile-desc">{currentUser?.description}</p>
+          <p className="profile-desc">{currentUser?.desc}</p>
         </div>
 
         <div className="container">
@@ -127,11 +123,12 @@ export default function Profile() {
               <input type="text" name='city' placeholder='City' value={inputs.city} onChange={handleChange} className='input-city'/>
               <input type="text" name='country' placeholder='Country' value={inputs.country} onChange={handleChange} className='input-country'/>
               <input type="text" name='gender' placeholder='Gender' value={inputs.gender} onChange={handleChange} className='input-gender' />              
+              <input type="text" name='desc' placeholder='Description' value={inputs.desc} onChange={handleChange} className='input-desc' />              
               <input type="file" className='profile-pic-file' id='img-file'/>
               <input type="file" className='profile-pic-file' id='img-file'/>
             </div>
 
-            <button className='submit-btn' type='submit'>Edit</button>
+            <button className='submit-btn' type='submit' >Confirm</button>
 
           <button className='close-btn' onClick={togglePopUp}>X</button>
         </div>
