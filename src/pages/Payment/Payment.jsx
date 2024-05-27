@@ -1,4 +1,5 @@
 import React, {useState } from 'react'
+import './Payment.css'
 
 
 export default function Payment(){
@@ -27,15 +28,36 @@ export default function Payment(){
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the payment details to your backend or a payment gateway API
-    alert(`Payment method: ${paymentMethod} submitted`);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the payment details to your backend or a payment gateway API
+    
+  //   alert(`Payment method: ${paymentMethod} submitted`);
+  // };
+
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!isChecked) {
+      alert('You must agree to the payment terms before proceeding.');
+      return;
+    }
+    // Proceed with form submission or payment processing
+    console.log('Payment terms agreed. Proceeding with payment...');
+  };
+
+
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="payment-container">
+        
         <h1>Payment Form</h1>
         <form onSubmit={handleSubmit}>
           <div>
@@ -125,10 +147,29 @@ export default function Payment(){
             </div>
           )}
 
-          <button type="submit">Submit Payment</button>
+          {/* <div className="payment-agree">
+              <input type="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} required/>
+              <p>By continuing, I agree to the payment agreement</p>
+          </div>
+          <button type="submit">Submit Payment</button> */}
+
+        <div>
+          <input 
+            type="checkbox" 
+            id="paymentAgreement" 
+            checked={isChecked} 
+            onChange={handleCheckboxChange} 
+          />
+          <label htmlFor="paymentAgreement">
+            I agree to the payment terms and conditions
+          </label>
+        </div>
+        <button type="submit" disabled={!isChecked}>
+          Submit Payment
+        </button>
+          
         </form>
       </header>
     </div>
   );
 }
-
