@@ -13,6 +13,7 @@ import ErrorPage from './pages/ErrorPage.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 //import Admin from './pages/Admin.jsx';
 
+
 const router = createBrowserRouter([
   {
     element: <Navbar />,
