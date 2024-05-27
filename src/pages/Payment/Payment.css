@@ -2,6 +2,9 @@
 
 .App {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .App-header {
@@ -14,7 +17,45 @@
     font-size: calc(10px + 2vmin);
     color: white;
   }
+
+  .payment-container{
+    width: 50%;
+    max-width: 600px;
+    height: max-content;
+    background-color: #FEFEFE;
+    margin: auto;
+    padding: 40px 60px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 1rem;
+}
+
+  .payment-container .payment-agree{
+    display: flex;
+    align-items: center;
+    gap: .825rem;
+    font-size: 0.925rem;
+  }
+
+  .payment-container .submit{
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: var(--secondary-green-clr);
+    color: #FEFEFE;
+    font-weight: bold;
+  }
   
+  header{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -39,7 +80,7 @@
     border-radius: 4px;
   }
   
-  button {
+  .submit {
     padding: 0.5rem;
     font-size: 1rem;
     color: white;
