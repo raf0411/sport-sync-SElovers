@@ -1,0 +1,37 @@
+@import '../../root.css';
+
+.RoomContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* sementara */
+    margin-bottom: 50px;
+}
+
+.RoomV{
+    width: 80%;
+    background-color: var(--secondary-green-clr);
+    color: #FEFEFE;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* .BookedV img{
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
+} */
+
+.RoomV .RoomInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.RoomV .RoomInfo .Room-name{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-clr);
+}

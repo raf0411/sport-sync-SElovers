@@ -1,0 +1,10 @@
+@import '../../root.css';
+.BRContainer{
+    margin: 50px;
+}
+
+.Booked_Rooms{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
