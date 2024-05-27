@@ -12,8 +12,6 @@ export default function navbar() {
   const [menu, setMenu] = useState("home");
   const { currentUser } = useContext(AuthContext);
 
-  console.log(currentUser);
-
   const dropdownToggle = (e) => {
     menuRef.current.classList.toggle("nav-menu-visible");
     e.target.classList.toggle('open');

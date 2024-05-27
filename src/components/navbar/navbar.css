@@ -87,6 +87,7 @@ nav .profile-img{
     height: 44px;
     object-fit: cover;
     border-radius: 50%;
+    border: 2px solid black;
 }
 
 nav .nav-extra{
