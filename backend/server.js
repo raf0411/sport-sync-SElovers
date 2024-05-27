@@ -4,8 +4,6 @@ import authRoutes from './routes/auth.js';
 import userRoutes from './routes/user.js';
 import postRoutes from './routes/post.js';
 import likeRoutes from './routes/likes.js';
-import bookingRoutes from './routes/booking.js';
-import paymentRoutes from './routes/payment.js';
 import commentRoutes from './routes/comments.js';
 import cookieParser from 'cookie-parser';
 
@@ -23,13 +21,10 @@ app.use(cors(corsOptions));
 app.use(cookieParser());
 
 app.use('/backend/auth', authRoutes);
-app.use('/backend/user', userRoutes);
+app.use('/backend/users', userRoutes);
 app.use('/backend/post', postRoutes);
 app.use('/backend/likes', likeRoutes);
 app.use('/backend/comments', commentRoutes);
-app.use('/backend/booking', bookingRoutes);
-app.use('/backend/payment', paymentRoutes);
-
 
 const PORT = 8802;
 

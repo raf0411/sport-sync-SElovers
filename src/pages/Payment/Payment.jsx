@@ -61,52 +61,39 @@ export default function Payment(){
         <h1>Payment Form</h1>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="paymentMethod">Payment Method : </label>
-            <div><select id="paymentMethod" value={paymentMethod} onChange={handlePaymentMethodChange}>
+            <label htmlFor="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" value={paymentMethod} onChange={handlePaymentMethodChange}>
               <option value="credit-card">Credit Card</option>
               <option value="gopay">GoPay</option>
               <option value="ovo">OVO</option>
-            </select></div>
-            
+            </select>
           </div>
 
           {paymentMethod === 'credit-card' && (
             <>
               <div>
-                <label htmlFor="name">Name on Card : </label>
-                <div>
+                <label htmlFor="name">Name on Card:</label>
                 <input type="text" id="name" placeholder='Name on Card' name="name"  value={creditCardDetails.name}  onChange={(e) => handleInputChange(e, 'credit-card')}
                   required
                 />
-                </div>
-                
               </div>
               <div>
-                <label htmlFor="cardNumber">Card Number : </label>
-                <div>
+                <label htmlFor="cardNumber">Card Number:</label>
                 <input type="text" id="cardNumber" placeholder='Card Number' name="cardNumber"  value={creditCardDetails.cardNumber}   onChange={(e) => handleInputChange(e, 'credit-card')}
                   required
                 />
-                </div>
-                
               </div>
               <div>
-                <label htmlFor="expiryDate">Expiry Date : </label>
-                <div>
+                <label htmlFor="expiryDate">Expiry Date:</label>
                 <input type="text" id="expiryDate"  name="expiryDate" value={creditCardDetails.expiryDate} onChange={(e) => handleInputChange(e, 'credit-card')}  placeholder="MM/YY"
                   required
                 />
-                </div>
-                
               </div>
               <div>
-                <label htmlFor="cvv">CVV : </label>
-                <div>
+                <label htmlFor="cvv">CVV:</label>
                 <input type="text" id="cvv" placeholder='CVV'  name="cvv" value={creditCardDetails.cvv} onChange={(e) => handleInputChange(e, 'credit-card')}
                   required
                 />
-                </div>
-                
               </div>
             </>
           )}
@@ -153,10 +140,10 @@ export default function Payment(){
             onChange={handleCheckboxChange} 
           />
           <label htmlFor="paymentAgreement">
-              I agree to the payment terms and conditions
+            I agree to the payment terms and conditions
           </label>
         </div>
-        <button class = "submit-btn" type="submit" disabled={!isChecked}>
+        <button type="submit" disabled={!isChecked}>
           Submit Payment
         </button>
           
