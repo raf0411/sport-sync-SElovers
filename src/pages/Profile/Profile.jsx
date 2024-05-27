@@ -1,15 +1,45 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Profile.css';
 import { AuthContext } from '../../context/authContext.jsx';
 import { useNavigate } from 'react-router-dom';
+import addImg from '../../assets/add-img.svg';
+
 
 export default function Profile() {
   const { currentUser, logout } = useContext(AuthContext);
+  const [cover, setCover] = useState(null);
+  const [profile, setProfile] = useState(null);
+
+  const [inputs, setInputs] = useState({
+    name: "",
+    username: "",
+    city: "",
+    country: "",
+    gender: "",
+  });
+
+  const [popUp, setPopUp] = useState(false);
+
+  const togglePopUp = () => {
+    setPopUp(!popUp);
+  };
+
+  const handleChange = e => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
     navigate("/");
+  }
+
+  // Disable Scrolling
+  if (popUp) {
+    document.body.classList.add('active-profile');
+  } else {
+    document.body.classList.remove('active-profile');
   }
 
   return (
@@ -76,7 +106,7 @@ export default function Profile() {
 
         <div className="btn-container">
           <button className='add-sport-btn'><img src="../public/images/add-circle.svg" alt="add" /> &nbsp; Add a Sport</button>
-          <button className='edit-btn'>Edit Profile</button>
+          <button className='edit-btn' onClick={togglePopUp}>Edit Profile</button>
             {/* kalo profile lain */}
             {/* <button className='follow-btn'>Follow</button> */}
             {/* <button className='chat-btn'>Chat</button>  */}
@@ -84,6 +114,30 @@ export default function Profile() {
         </div>
 
       </div>
+      
+      {popUp && (
+        <div className="popup">
+        <div className="overlay"></div>
+          <div className="content">
+            <div className='form'>
+              <h1>Edit Profile</h1>
+
+              <input type="text" name='name' placeholder='Name' value={inputs.name} onChange={handleChange} className='input-name'/>
+              <input type="text" name='username' placeholder='Username' value={inputs.username} onChange={handleChange} className='input-username'/>
+              <input type="text" name='city' placeholder='City' value={inputs.city} onChange={handleChange} className='input-city'/>
+              <input type="text" name='country' placeholder='Country' value={inputs.country} onChange={handleChange} className='input-country'/>
+              <input type="text" name='gender' placeholder='Gender' value={inputs.gender} onChange={handleChange} className='input-gender' />              
+              <input type="file" className='profile-pic-file' id='img-file'/>
+              <input type="file" className='profile-pic-file' id='img-file'/>
+            </div>
+
+            <button className='submit-btn' type='submit'>Edit</button>
+
+          <button className='close-btn' onClick={togglePopUp}>X</button>
+        </div>
+      </div>
+      )}
+
     </div>
   )
 }

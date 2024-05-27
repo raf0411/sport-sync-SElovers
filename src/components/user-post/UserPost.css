@@ -1,5 +1,10 @@
 @import '../../root.css';
 
+.file-container .file{
+    width: 200px;
+    object-fit: cover;
+}
+
 .user-post-container{
     display: flex;
     justify-content: center;
