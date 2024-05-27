@@ -1,0 +1,29 @@
+@import '../../root.css';
+.BRContainer{
+    margin: 50px;
+    margin-left: 150px;
+}
+
+/* .BRContainer h2{
+    margin-left: ;
+} */
+
+.Booked_Rooms{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.ActivityContainer{
+    margin: 50px;
+    margin-left: 150px;
+}
+
+.ActivityField{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    /* width: 100%; */
+    /* max-width: 800px;  */
+}
