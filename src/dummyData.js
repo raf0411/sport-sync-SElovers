@@ -102,12 +102,12 @@ export const Venues = [
         name: "Lapangan Boongan",
         photo: '/images/venue-image.jpg',
         open_time: {
-            Monday: '9:00 - 17:00',
-            Tuesday: '9:00 - 17:00',
-            Wednesday: '9:00 - 17:00',
-            Thursday: '9:00 - 17:00',
-            Friday: '9:00 - 17:00',
-            Saturday: '9:00 - 17:00',
+            Monday: '9:30 - 20:30',
+            Tuesday: '9:30 - 20:30',
+            Wednesday: '9:30 - 20:30',
+            Thursday: '9:30 - 20:30',
+            Friday: '9:30 - 20:30',
+            Saturday: '10:00 - 19:00',
             Sunday: 'Closed'
           },
         location: 'Jalan hantu 7, Pocong hidup',
