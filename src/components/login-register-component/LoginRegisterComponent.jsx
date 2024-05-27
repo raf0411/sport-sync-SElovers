@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './LoginRegisterComponent.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/authContext.jsx';
 
 export default function LoginRegisterComponent() {
   const [inputs, setInputs] = useState({
@@ -12,29 +13,42 @@ export default function LoginRegisterComponent() {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const { login } = useContext(AuthContext);
+
+  const [err, setErr] = useState(null);
+
 
   const handleChange = e =>{
     setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
   }
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      navigate("/");
-    }
-  }, [formErrors, isSubmit, navigate]);
+  // useEffect(() => {
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     navigate("/");
+  //   }
+  // }, [formErrors, isSubmit, navigate]);
 
   const handleCheckboxChange = e => {
     setCheckboxChecked(e.target.checked);
   };
 
   const handleSubmit = async e => {
-    setIsSubmit(true);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      navigate("/");
-    }
     e.preventDefault()
+    setIsSubmit(true);
     setFormErrors(validate(inputs, checkboxChecked));
-  }
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      try {
+        await login(inputs);
+        navigate("/");
+      } catch (err) {
+        if (err.response) {
+          setErr(err.response.data);
+        } else {
+          setErr("An unexpected error occurred.");
+        }
+      }
+    }
+  }  
 
   const validate = (values, isChecked) => {
     const errors = {};
@@ -62,8 +76,8 @@ export default function LoginRegisterComponent() {
   }
 
   return (
-    <div className='login-reg'>
-      <form className="login-reg-container" onSubmit={handleSubmit}>
+    <div className='login'>
+      <form className="login-reg-container">
         <h1>Login</h1>
 
         <div className="input-container">
@@ -75,6 +89,8 @@ export default function LoginRegisterComponent() {
         </div>
 
         <button className='continue-btn' type='submit' onClick={handleSubmit}>Continue</button>
+
+        <p style={{color: "red"}}>{err && err}</p>
 
         <p className="create-account">
           Create an account? <span><Link href="" to='/register'>Click here</Link></span>

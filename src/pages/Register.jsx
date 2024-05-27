@@ -41,8 +41,7 @@ export default function Register() {
   const registerUser = async () => {
     try {
       const response = await axios.post("http://localhost:8801/backend/auth/register", inputs);
-      console.log(response.data);
-      navigate("/login");
+      navigate("/login"); 
     } catch (error) {
       if (error.response) {
         setError(error.response.data);
@@ -84,8 +83,8 @@ export default function Register() {
   };
 
   return (
-    <div className='login-reg'>
-      <form className="login-reg-container" onSubmit={handleSubmit}>
+    <div className='reg'>
+      <form className="login-reg-container">
         <h1>Register</h1>
 
         <div className="input-container">
@@ -103,7 +102,7 @@ export default function Register() {
 
         </div>
 
-        <button type='submit' className='continue-btn'>Continue</button>
+        <button type='submit' className='continue-btn' onClick={handleSubmit}>Continue</button>
         {err && <p className='userexisterr'>{err}</p>}
 
         {Object.keys(formErrors).length === 0 && isSubmit && !err && <div className='success-message'>Account has been created!</div>}

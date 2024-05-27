@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
-import { AuthProvider } from './AuthContext.jsx';
 import Venues from './pages/Venues.jsx';
 import VenueDetail from './components/venue-detail/VenueDetail.jsx';
 import Community from './pages/Community.jsx';
@@ -12,6 +11,7 @@ import GroupDetail from './components/group-detail/GroupDetail.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Profile from './pages/Profile/Profile.jsx';
+import Payment from './pages/Payment/Payment.jsx'
 //import Admin from './pages/Admin.jsx';
 
 
@@ -56,6 +56,10 @@ const router = createBrowserRouter([
         path: '/profile',
         element: <Profile />,
       },
+      {
+        path: '/payment',
+        element: <Payment />,
+      }
     ]
   }
 
@@ -63,9 +67,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <AuthProvider>
+    <>
       <RouterProvider router={router} />
-    </AuthProvider>
+    </>
   )
 }
 

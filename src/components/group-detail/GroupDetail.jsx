@@ -5,7 +5,6 @@ import './GroupDetail.css';
 import GroupImage from '../../assets/group-image.jpg';
 import SportImage from '../../assets/profile-user.png';
 import Members from '../../assets/members.svg';
-import Public from '../../assets/public.svg';
 import { Groups } from '../../dummyData';
 
 export default function GroupDetail() {
@@ -33,7 +32,7 @@ export default function GroupDetail() {
               
               <div className='member-container'>
                 <p className="group-type">
-                  <img src={Public} alt="public img" />
+                  <img src={`../../../public/images/${Groups.filter((g) => g.id === groupId)[0].type}.svg`} alt="public/private" />
                   {Groups.filter((g) => g.id === groupId)[0].type}
                   &nbsp;
                 </p>

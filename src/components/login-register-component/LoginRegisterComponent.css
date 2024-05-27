@@ -1,8 +1,13 @@
 @import '../../root.css';
 
-.login-reg{
-    padding-top: 50px;
-    padding-bottom: 50px;
+.login{
+    padding-top: 180px;
+    padding-bottom: 40px;
+}
+
+.reg{
+    padding-top: 110px;
+    padding-bottom: 40px;
 }
 
 .login-reg-container{
@@ -52,8 +57,12 @@
 }
 
 .login-reg-container .create-account span{
-    color: var(--secondary-green-clr2);
+    color: #C9C9C9;
     font-weight: bold;
+}
+
+.create-account span:hover {
+    color: #4CAB60;
 }
 
 .login-reg-container .login-reg-agree{

@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './UserPost.css';
 
 import addImg from '../../assets/add-img.svg';
 import addVideo from '../../assets/add-video.svg';
 import profilePic from '../../assets/profile-user.png';
+import { AuthContext } from '../../context/authContext';
 
 export default function UserPost() {
+
+  const {currentUser} = useContext(AuthContext);
+
   return (
     <div className='user-post-container'>
       <div className="user-post">
         <div className="post-comment">
-          <img src={profilePic} alt="Profile Pic" className="profile-pic" />
-          <input type="text" className="user-comment" placeholder='Add post...'/>
+          <img src={currentUser?.profilePic} alt="Profile Pic" className="profile-pic" />
+          <input type="text" className="user-comment2" placeholder='Add post...'/>
         </div>
         
         <hr />
