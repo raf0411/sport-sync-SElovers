@@ -6,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './VenueDetail.css';
 import VenueImage from '../../assets/venue-image.jpg';
 import { Venues } from '../../dummyData';
+import { Link } from 'react-router-dom';
 
 export default function VenueDetail() {
   const params = useParams();
@@ -182,7 +183,9 @@ export default function VenueDetail() {
                     </div>
                   ))}
                 </div>
-                <button className="modal-book-button" onClick={() => console.log('Booked times:', selectedTimes)}>Book</button>
+                <Link to='/payment'>
+                    <button className="modal-book-button" onClick={() => console.log('Booked times:', selectedTimes)}>Book</button>
+                </Link>
               </div>
             )}
           </div>
