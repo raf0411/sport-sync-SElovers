@@ -15,13 +15,6 @@
     padding: 2rem 3rem 0;
 }
 
-.venue-detail .venue-detail-container .venue-img{
-    width: 50%;
-    height: 400px;
-    overflow: hidden;
-    object-fit: cover;
-    border-radius: 0 0 0 4rem;
-}
 .venue-detail .venue-detail-container .venue-map{
   margin-top: 4.5rem;
     width: 100%;
@@ -169,95 +162,120 @@
 }
 
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     background: white;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    max-width: 500px;
-    width: 100%;
+    max-width: 600px;
+    margin: auto;
     border-radius: 8px;
+    z-index: 1050;
+    overflow-y: auto;
+    max-height: 80vh;
   }
   
   .modal-overlay {
+    background: rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1040;
+  }
+  
+  .close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+  }
+  
+  .close-modal-button:hover {
+    color: #000;
   }
   
   .modal-content {
     display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+  
+  .calendar-container {
+    display: inline-block;
   }
   
   .availability-info {
     margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    max-width: 200px;
   }
   
   .selected-date {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     margin-bottom: 10px;
   }
   
-  .day-name {
-    font-weight: bold;
-  }
-  
-  .full-date {
-    margin-top: 0;
-  }
-  
-  .available {
-    color: green;
-  }
+
   
   .closed {
     color: red;
     font-weight: bold;
   }
   
+  .available {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .open{
+    color: #4CAB60;
+    font-weight: bold;
+    padding: 0 10px 10px 0;
+  }
+
+  .time-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .time-block {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid transparent;
+  }
+  
+  .time-block:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .time-block.selected {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+  
   .modal-book-button {
     background-color: #4CAF50;
-    border: none;
     color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    margin-top: 10px;
-  }
-  
-  .modal-book-button:hover {
-    transform: scale(1.05);
-  }
-  
-  .close-modal-button {
-    background: none;
     border: none;
-    color: #333;
-    font-size: 30px;
-    position: absolute;
-    top: 10px;
-    right: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
     cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+    transition: transform 0.3s ease;
   }
-  
-  .close-modal-button:hover {
-    transform: scale(1.1);
-    color: #f44336;
+
+  .modal-book-button:hover{
+    transform: scale(1.05);
   }
