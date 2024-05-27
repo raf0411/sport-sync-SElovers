@@ -2,6 +2,7 @@ import React, {useState } from 'react'
 import './Payment.css'
 
 
+
 export default function Payment(){
   const [paymentMethod, setPaymentMethod] = useState('credit-card');
   const [creditCardDetails, setCreditCardDetails] = useState({
@@ -57,7 +58,6 @@ export default function Payment(){
   return (
     <div className="App">
       <header className="payment-container">
-        
         <h1>Payment Form</h1>
         <form onSubmit={handleSubmit}>
           <div>
@@ -73,46 +73,25 @@ export default function Payment(){
             <>
               <div>
                 <label htmlFor="name">Name on Card:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={creditCardDetails.name}
-                  onChange={(e) => handleInputChange(e, 'credit-card')}
+                <input type="text" id="name" placeholder='Name on Card' name="name"  value={creditCardDetails.name}  onChange={(e) => handleInputChange(e, 'credit-card')}
                   required
                 />
               </div>
               <div>
                 <label htmlFor="cardNumber">Card Number:</label>
-                <input
-                  type="text"
-                  id="cardNumber"
-                  name="cardNumber"
-                  value={creditCardDetails.cardNumber}
-                  onChange={(e) => handleInputChange(e, 'credit-card')}
+                <input type="text" id="cardNumber" placeholder='Card Number' name="cardNumber"  value={creditCardDetails.cardNumber}   onChange={(e) => handleInputChange(e, 'credit-card')}
                   required
                 />
               </div>
               <div>
                 <label htmlFor="expiryDate">Expiry Date:</label>
-                <input
-                  type="text"
-                  id="expiryDate"
-                  name="expiryDate"
-                  value={creditCardDetails.expiryDate}
-                  onChange={(e) => handleInputChange(e, 'credit-card')}
-                  placeholder="MM/YY"
+                <input type="text" id="expiryDate"  name="expiryDate" value={creditCardDetails.expiryDate} onChange={(e) => handleInputChange(e, 'credit-card')}  placeholder="MM/YY"
                   required
                 />
               </div>
               <div>
                 <label htmlFor="cvv">CVV:</label>
-                <input
-                  type="text"
-                  id="cvv"
-                  name="cvv"
-                  value={creditCardDetails.cvv}
-                  onChange={(e) => handleInputChange(e, 'credit-card')}
+                <input type="text" id="cvv" placeholder='CVV'  name="cvv" value={creditCardDetails.cvv} onChange={(e) => handleInputChange(e, 'credit-card')}
                   required
                 />
               </div>
