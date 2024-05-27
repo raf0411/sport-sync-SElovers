@@ -11,7 +11,9 @@ import GroupDetail from './components/group-detail/GroupDetail.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Profile from './pages/Profile/Profile.jsx';
+import Payment from './pages/Payment/Payment.jsx'
 //import Admin from './pages/Admin.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,10 @@ const router = createBrowserRouter([
         path: '/profile',
         element: <Profile />,
       },
+      {
+        path: '/payment',
+        element: <Payment />,
+      }
     ]
   }
 
