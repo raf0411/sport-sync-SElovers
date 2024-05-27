@@ -10,7 +10,6 @@ import { AuthContext } from '../../context/authContext.jsx';
 export default function navbar() {
   const menuRef = useRef();
   const [menu, setMenu] = useState("home");
-  const [isLogin, setIsLogin] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
   console.log(currentUser);
@@ -37,7 +36,7 @@ export default function navbar() {
         <div className="nav-extra">
           {currentUser
             ?
-            (<Link to='/profile'><img src={ProfileImage} alt="profile img" className='profile-img' /></Link>)
+            (<Link to='/profile'><img src={currentUser?.profilePic} alt="profile img" className='profile-img' /></Link>)
             :
             (<Link to='/login'><button className='login-btn'>Login</button></Link>)
           }

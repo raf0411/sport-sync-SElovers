@@ -1,16 +1,26 @@
 import React, { useContext } from 'react';
 import './Profile.css';
-import { AuthContext } from '../../context/authContext';
+import { AuthContext } from '../../context/authContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
   const { currentUser, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  }
 
   return (
     <div className='profile-container'>
       <div className="profile">
         <div className="profile-images">
           <img className="profile-background-img" src='../../public/images/group-futsall.jpg'></img>
-          <img className="profile-profile-img" src='../../public/images/profile-user.png'></img>
+          {currentUser ?
+            <img className="profile-profile-img" src={currentUser.profilePic}></img> : 
+            <img className="profile-profile-img" src='../../public/images/profile-user.png'></img>
+          }
         </div>
 
         <div className="profile-info">
@@ -50,8 +60,8 @@ export default function Profile() {
               <p className="follower-count">{currentUser?.followers}</p>
             </div>
             <div className="following-container">
-              <p className='user-following-text'>Following </p>
-              <p className="following-count">{currentUser?.following}</p>
+              <p className='user-following-text'>Following</p>
+              <p className="following-count">{currentUser?.followings}</p>
             </div>
           </div>
         </div>
@@ -59,10 +69,10 @@ export default function Profile() {
         <div className="btn-container">
           <button className='add-sport-btn'><img src="../public/images/add-circle.svg" alt="add" /> &nbsp; Add a Sport</button>
           <button className='edit-btn'>Edit Profile</button>
-          {/* kalo profile lain */}
-          {/* <button className='follow-btn'>Follow</button> */}
-          {/* <button className='chat-btn'>Chat</button>  */}
-          <button className='chat-btn' onClick={logout}>Logout</button>
+            {/* kalo profile lain */}
+            {/* <button className='follow-btn'>Follow</button> */}
+            {/* <button className='chat-btn'>Chat</button>  */}
+            <button className='chat-btn' onClick={handleLogout}>Logout</button>
         </div>
 
       </div>
