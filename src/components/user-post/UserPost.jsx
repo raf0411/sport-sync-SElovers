@@ -67,11 +67,11 @@ export default function UserPost() {
             <input style={{ display: "none" }} type="file" id='img-file' accept='image/*' onChange={e=>setFile(e.target.files[0])}/>
           </label>
 
-          <label htmlFor='video-file'>
+          {/* <label htmlFor='video-file'>
             <img src={addVideo} alt="Add Video" className="add-btn" />
             <p>Video</p>
             <input style={{display: "none"}} type="file" id='video-file' accept='video/*' onChange={e=>setFile(e.target.files[0])}/>
-          </label>
+          </label> */}
 
           <button className='post-btn' onClick={handlePost}>
             Post

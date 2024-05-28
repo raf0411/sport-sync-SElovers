@@ -7,13 +7,11 @@ import { useQuery } from '@tanstack/react-query';
 import './CSS/Community.css'
 import { makeRequest } from '../axios.js';
 
-export default function Community() {
+export default function Community({userId}) {
   const { isPending, error, data } = useQuery({
     queryKey: ['posts'],
-    queryFn: () => makeRequest.get("/posts").then(res => res.data),
+    queryFn: () => makeRequest.get("/posts?userId="+userId).then(res => res.data),
   });
-
-  console.log(data);
 
   const {currentUser} = useContext(AuthContext);
 

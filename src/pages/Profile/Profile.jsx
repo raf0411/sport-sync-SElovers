@@ -1,11 +1,21 @@
 import React, { useContext, useState } from 'react';
 import './Profile.css';
 import { AuthContext } from '../../context/authContext.jsx';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import addImg from '../../assets/add-img.svg';
+import { makeRequest } from '../../axios.js';
+import { useMutation, useQueryClient, useQuery } from '@tanstack/react-query';
 
 export default function Profile() {
+  const userId = parseInt(useLocation().pathname.split("/")[2]);
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['user'],
+    queryFn: () => makeRequest.get("/user/find/"+userId).then(res => res.data),
+});
+
   const { currentUser, logout } = useContext(AuthContext);
+  const [cover, setCover] = useState(null);
+  const [profile, setProfile] = useState(null);
   const [popUp, setPopUp] = useState(false);
   const [inputs, setInputs] = useState({
     name: "",
@@ -15,6 +25,18 @@ export default function Profile() {
     gender: "",
     desc: "",
   });
+
+  const upload = async (file) => {
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const res = await makeRequest.post("/upload", formData);
+      return res.data;
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   const togglePopUp = () => {
     setPopUp(!popUp);
@@ -29,6 +51,30 @@ export default function Profile() {
   const handleLogout = () => {
     logout();
     navigate("/");
+  }
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (user) => {
+      return makeRequest.put("/user", user);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user'] });
+    },
+  });
+
+  const handleEdit = async (e) => {
+    e.preventDefault();
+
+    let coverUrl = data.coverPic;
+    let profileUrl = data.profileUrl;
+
+    coverUrl = cover && await upload(coverUrl)
+    coverUrl = profile && await upload(profileUrl)
+
+    mutation.mutate({ ...inputs, coverPic: coverUrl, profilePic: profileUrl });
+    setPopUp(false);
   }
 
   // Disable Scrolling
@@ -128,7 +174,7 @@ export default function Profile() {
               <input type="file" className='profile-pic-file' id='img-file'/>
             </div>
 
-            <button className='submit-btn' type='submit' >Confirm</button>
+            <button className='submit-btn' type='submit' onClick={handleEdit}>Confirm</button>
 
           <button className='close-btn' onClick={togglePopUp}>X</button>
         </div>
