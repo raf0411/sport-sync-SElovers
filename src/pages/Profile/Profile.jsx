@@ -1,15 +1,87 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Profile.css';
 import { AuthContext } from '../../context/authContext.jsx';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import addImg from '../../assets/add-img.svg';
+import { makeRequest } from '../../axios.js';
+import { useMutation, useQueryClient, useQuery } from '@tanstack/react-query';
 
 export default function Profile() {
+  const userId = parseInt(useLocation().pathname.split("/")[2]);
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['user'],
+    queryFn: () => makeRequest.get("/user/find/"+userId).then(res => res.data),
+});
+
   const { currentUser, logout } = useContext(AuthContext);
+  const [cover, setCover] = useState(null);
+  const [profile, setProfile] = useState(null);
+  const [popUp, setPopUp] = useState(false);
+  const [inputs, setInputs] = useState({
+    name: "",
+    username: "",
+    city: "",
+    country: "",
+    gender: "",
+    desc: "",
+  });
+
+  const upload = async (file) => {
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const res = await makeRequest.post("/upload", formData);
+      return res.data;
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const togglePopUp = () => {
+    setPopUp(!popUp);
+  };
+
+  const handleChange = e => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
     navigate("/");
+  }
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (user) => {
+      return makeRequest.put("/user", user);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user'] });
+    },
+  });
+
+  const handleEdit = async (e) => {
+    e.preventDefault();
+
+    let coverUrl = data.coverPic;
+    let profileUrl = data.profileUrl;
+
+    coverUrl = cover && await upload(coverUrl)
+    coverUrl = profile && await upload(profileUrl)
+
+    mutation.mutate({ ...inputs, coverPic: coverUrl, profilePic: profileUrl });
+    setPopUp(false);
+  }
+
+  // Disable Scrolling
+  if (popUp) {
+    document.body.classList.add('active-profile');
+  } else {
+    document.body.classList.remove('active-profile');
   }
 
   return (
@@ -34,7 +106,7 @@ export default function Profile() {
         <div className="profile-info">
           <p className="profile-name">{currentUser?.name}</p>
           <p className="profile-username">@{currentUser?.username}</p>
-          <p className="profile-desc">{currentUser?.description}</p>
+          <p className="profile-desc">{currentUser?.desc}</p>
         </div>
 
         <div className="container">
@@ -76,7 +148,7 @@ export default function Profile() {
 
         <div className="btn-container">
           <button className='add-sport-btn'><img src="../public/images/add-circle.svg" alt="add" /> &nbsp; Add a Sport</button>
-          <button className='edit-btn'>Edit Profile</button>
+          <button className='edit-btn' onClick={togglePopUp}>Edit Profile</button>
             {/* kalo profile lain */}
             {/* <button className='follow-btn'>Follow</button> */}
             {/* <button className='chat-btn'>Chat</button>  */}
@@ -84,6 +156,31 @@ export default function Profile() {
         </div>
 
       </div>
+      
+      {popUp && (
+        <div className="popup">
+        <div className="overlay"></div>
+          <div className="content">
+            <div className='form'>
+              <h1>Edit Profile</h1>
+
+              <input type="text" name='name' placeholder='Name' value={inputs.name} onChange={handleChange} className='input-name'/>
+              <input type="text" name='username' placeholder='Username' value={inputs.username} onChange={handleChange} className='input-username'/>
+              <input type="text" name='city' placeholder='City' value={inputs.city} onChange={handleChange} className='input-city'/>
+              <input type="text" name='country' placeholder='Country' value={inputs.country} onChange={handleChange} className='input-country'/>
+              <input type="text" name='gender' placeholder='Gender' value={inputs.gender} onChange={handleChange} className='input-gender' />              
+              <input type="text" name='desc' placeholder='Description' value={inputs.desc} onChange={handleChange} className='input-desc' />              
+              <input type="file" className='profile-pic-file' id='img-file'/>
+              <input type="file" className='profile-pic-file' id='img-file'/>
+            </div>
+
+            <button className='submit-btn' type='submit' onClick={handleEdit}>Confirm</button>
+
+          <button className='close-btn' onClick={togglePopUp}>X</button>
+        </div>
+      </div>
+      )}
+
     </div>
   )
 }

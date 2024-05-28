@@ -11,7 +11,8 @@ import GroupDetail from './components/group-detail/GroupDetail.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Profile from './pages/Profile/Profile.jsx';
-import Payment from './pages/Payment/Payment.jsx'
+import Payment from './pages/Payment/Payment.jsx';
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 //import Admin from './pages/Admin.jsx';
 
 
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: '/profile',
+        path: '/profile/:profileId',
         element: <Profile />,
       },
       {
@@ -66,10 +67,12 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </>
+    </QueryClientProvider>
   )
 }
 

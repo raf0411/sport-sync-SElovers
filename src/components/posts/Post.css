@@ -35,7 +35,9 @@
 
 .post .user-info .user-profile-pic{
     width: 44px;
-    border-radius: 2rem;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .post .post-description{
