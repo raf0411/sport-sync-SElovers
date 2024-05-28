@@ -19,7 +19,7 @@
     "mysql": "^2.18.1",
     "nodemon": "^3.1.1"
   },
-  "proxy": "http://localhost:8802/backend/",
+  "proxy": "http://localhost:8801/backend/",
   "devDependencies": {},
   "description": ""
 }
