@@ -56,75 +56,78 @@ export default function Payment(){
 
 
   return (
-    <div className="App">
+    <div className="payment-form">
       <header className="payment-container">
         <h1>Payment Form</h1>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="paymentMethod">Payment Method:</label>
+            <label htmlFor="paymentMethod">Payment Method: </label>
             <select id="paymentMethod" value={paymentMethod} onChange={handlePaymentMethodChange}>
               <option value="credit-card">Credit Card</option>
               <option value="gopay">GoPay</option>
               <option value="ovo">OVO</option>
             </select>
           </div>
+            <div className= "payment-method">
+              {paymentMethod === 'credit-card' && (
+                <>
+                  <div>
+                    <label htmlFor="name" classname='proc'>Name on Card:   </label>
+                    <input type="text" id="name" placeholder='Name on Card' name="name"  value={creditCardDetails.name}  onChange={(e) => handleInputChange(e, 'credit-card')}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="cardNumber" classname='proc'>Card Number:  </label>
+                    <input type="text" id="cardNumber" placeholder='Card Number' name="cardNumber"  value={creditCardDetails.cardNumber}   onChange={(e) => handleInputChange(e, 'credit-card')}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="expiryDate" className='proc'>Expiry Date:  </label>
+                    <input type="text" id="expiryDate"  name="expiryDate" value={creditCardDetails.expiryDate} onChange={(e) => handleInputChange(e, 'credit-card')}  placeholder="MM/YY"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="cvv"className='proc'>CVV:   </label>
+                    <input type="text" id="cvv" placeholder='CVV'  name="cvv" value={creditCardDetails.cvv} onChange={(e) => handleInputChange(e, 'credit-card')}
+                      required
+                    />
+                  </div>
+                </>
+              )}
 
-          {paymentMethod === 'credit-card' && (
-            <>
-              <div>
-                <label htmlFor="name">Name on Card:</label>
-                <input type="text" id="name" placeholder='Name on Card' name="name"  value={creditCardDetails.name}  onChange={(e) => handleInputChange(e, 'credit-card')}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="cardNumber">Card Number:</label>
-                <input type="text" id="cardNumber" placeholder='Card Number' name="cardNumber"  value={creditCardDetails.cardNumber}   onChange={(e) => handleInputChange(e, 'credit-card')}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="expiryDate">Expiry Date:</label>
-                <input type="text" id="expiryDate"  name="expiryDate" value={creditCardDetails.expiryDate} onChange={(e) => handleInputChange(e, 'credit-card')}  placeholder="MM/YY"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="cvv">CVV:</label>
-                <input type="text" id="cvv" placeholder='CVV'  name="cvv" value={creditCardDetails.cvv} onChange={(e) => handleInputChange(e, 'credit-card')}
-                  required
-                />
-              </div>
-            </>
-          )}
+              {paymentMethod === 'gopay' && (
+                <div>
+                  <label htmlFor="gopayPhoneNumber">GoPay Phone Number:</label>
+                  <input
+                    type="text"
+                    id="gopayPhoneNumber"
+                    name="phoneNumber"
+                    placeholder='Put Your Number Here'
+                    value={gopayDetails.phoneNumber}
+                    onChange={(e) => handleInputChange(e, 'gopay')}
+                    required
+                  />
+                </div>
+              )}
 
-          {paymentMethod === 'gopay' && (
-            <div>
-              <label htmlFor="gopayPhoneNumber">GoPay Phone Number:</label>
-              <input
-                type="text"
-                id="gopayPhoneNumber"
-                name="phoneNumber"
-                value={gopayDetails.phoneNumber}
-                onChange={(e) => handleInputChange(e, 'gopay')}
-                required
-              />
+              {paymentMethod === 'ovo' && (
+                <div>
+                  <label htmlFor="ovoPhoneNumber">OVO Phone Number: </label>
+                  <input
+                    type="text"
+                    id="ovoPhoneNumber"
+                    name="phoneNumber"
+                    placeholder='Put Your Number Here'
+                    value={ovoDetails.phoneNumber}
+                    onChange={(e) => handleInputChange(e, 'ovo')}
+                    required
+                  />
+                </div>
+              )}
             </div>
-          )}
-
-          {paymentMethod === 'ovo' && (
-            <div>
-              <label htmlFor="ovoPhoneNumber">OVO Phone Number:</label>
-              <input
-                type="text"
-                id="ovoPhoneNumber"
-                name="phoneNumber"
-                value={ovoDetails.phoneNumber}
-                onChange={(e) => handleInputChange(e, 'ovo')}
-                required
-              />
-            </div>
-          )}
 
           {/* <div className="payment-agree">
               <input type="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} required/>
@@ -132,18 +135,16 @@ export default function Payment(){
           </div>
           <button type="submit">Submit Payment</button> */}
 
-        <div>
+        <div className='checkboxtest'>
           <input 
             type="checkbox" 
             id="paymentAgreement" 
             checked={isChecked} 
             onChange={handleCheckboxChange} 
           />
-          <label htmlFor="paymentAgreement">
-            I agree to the payment terms and conditions
-          </label>
+          <p>I agree to the payment terms and conditions</p>
         </div>
-        <button type="submit" disabled={!isChecked}>
+        <button classname= 'pay' type="submit"  disabled={!isChecked}>
           Submit Payment
         </button>
           
