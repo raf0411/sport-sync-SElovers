@@ -1,5 +1,9 @@
 @import '../../root.css';
 
+body.active-profile{
+    overflow-y: hidden;
+}
+
 .profile-container{
     display: flex;
     align-items: center;
@@ -115,4 +119,131 @@
 .profile .btn-container{
     display: flex;
     justify-content: space-evenly;
+}
+
+.popup{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 999;
+}
+
+.overlay{
+    background-color: rgba(49,49,49,0.9);
+    height: 100%;
+}
+
+.popup .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    border-radius: .5rem;
+    max-width: 600px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: scroll;
+    padding: 2rem;
+}
+
+.popup .content .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    gap: 2rem;
+}
+
+.popup .content .close-btn{
+    align-self: center;
+    padding: .3rem .8rem;
+    font-weight: bold;
+    color: var(--primary-clr);
+    border: none;
+    background-color: #D24545;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.popup .content .close-btn:hover{
+    transform: scale(1.125);
+}
+
+.popup .content .close-btn:hover:active{
+    transform: scale(1);
+}
+
+.submit-btn{
+    align-self: center;
+    padding: .5rem 1rem;
+    font-weight: bold;
+    color: var(--primary-clr);
+    border: none;
+    background-color: var(--secondary-green-clr);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.submit-btn:hover{
+    transform: scale(1.125);
+}
+
+.submit-btn:active{
+    transform: scale(1);
+}
+
+.form input{
+    height: 50px;
+    border: 1px solid #C9C9C9;
+    padding-left: 20px;
+    font-size: 1.025rem;
+    outline: none;
+    border-radius: 12px;
+}
+
+.form .input-name{
+    background-image: url(../../../public/images/name.svg);
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+.form .input-username{
+    background-image: url(../../../public/images/username.svg);
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+.form .input-city{
+    background-image: url(../../../public/images/city.svg);
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+.form .input-country{
+    background-image: url(../../../public/images/country.svg);
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+.form .input-gender{
+    background-image: url(../../../public/images/gender.svg);
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+
+#img-file{
+    flex-wrap: wrap;
 }

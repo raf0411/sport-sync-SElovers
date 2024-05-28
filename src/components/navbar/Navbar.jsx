@@ -34,7 +34,7 @@ export default function navbar() {
         <div className="nav-extra">
           {currentUser
             ?
-            (<Link to='/profile'><img src={currentUser?.profilePic} alt="profile img" className='profile-img' /></Link>)
+            (<Link to={`/profile/${currentUser.id}`}><img src={currentUser?.profilePic} alt="profile img" className='profile-img' /></Link>)
             :
             (<Link to='/login'><button className='login-btn'>Login</button></Link>)
           }
