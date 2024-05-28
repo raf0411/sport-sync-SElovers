@@ -43,7 +43,7 @@ app.use('/backend/posts', postRoutes);
 app.use('/backend/likes', likeRoutes);
 app.use('/backend/comments', commentRoutes);
 
-const PORT = 8801;
+const PORT = 8802;
 
 app.listen(PORT, () => {
     console.log(`Connected to backend on port ${PORT}`);

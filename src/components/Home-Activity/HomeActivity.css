@@ -1,0 +1,76 @@
+@import '../../root.css';
+
+.ActivityC{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-top: 50px; /* sementara */
+    margin-bottom: 50px;
+    width: 1000px;
+}
+
+.RoomV{
+    width: 80%;
+    background-color: var(--secondary-green-clr);
+    color: #FEFEFE;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* .BookedV img{
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
+} */
+
+.RoomV .RoomInfo{
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.RoomV .RoomInfo .Room-name{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-clr);
+}
+
+.RoomMap{
+    /* margin-top: 4.5rem; */
+      width: 100%;
+      height: 200px;
+      /* overflow: hidden; */
+      /* object-fit: cover; */
+      border-radius: 14 14 0 0;
+  } 
+
+  .MembersAmt{
+    text-align: right;
+  }
+
+  .MemberList{
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  .RoomDes{
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .RoomV .RoomInfo .join-btn{
+    border: none;
+    padding: .5em 1.5em;
+    color: #32AF8E;
+    background-color: var(--primary-dark-clr);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    float: right;
+    margin-bottom: 10px;
+}
