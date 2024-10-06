@@ -1,4 +1,5 @@
 # SportSync
+This Repo contains codes for SportSync, a sport booking app as an Assurance of Learning for Course Software Engineering
 
 ## 📝 Why Sport Sync?
 In today's fast-paced and busy era, it's important for us to stay active and healthy. However, we often face two major challenges: difficulty in finding the right sports facilities and suitable partners who share our interests and schedules. This is the foundation for the creation of our app.
