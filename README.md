@@ -13,6 +13,13 @@ More importantly, we understand that exercising is more enjoyable when done with
 * [Proposal PKM-KC](https://docs.google.com/document/d/1Lf_n1_EbEfS3cmpNasGmAM9QI7BHLOI0/edit?usp=sharing&ouid=110138636428360179015&rtpof=true&sd=true)
 * [Github](https://github.com/raf0411/sport-sync-SElovers)
 
+## 🧑‍🤝‍🧑 Group 9 (SElovers)
+* Daniel Huang (2602192462)
+* Timothy Ansell Setiadi (2602170745)
+* Raissa Raffi Darmawan (2602177146)
+* Hansel Wilam (2602181042)
+* Kurniawan Andhika Putra (2602185242)    
+
 ## ⚙️ Tools
 * ReactJS
 * CSS
