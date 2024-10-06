@@ -10,7 +10,7 @@ More importantly, we understand that exercising is more enjoyable when done with
 
 ## 📂 Project
 * [Figma Design](https://www.figma.com/design/VKnKeYXA9yJBh48kxWMrDP/SportSync?node-id=154-40&t=4EJmYQNBrCFG5AmE-0)
-* [Proposal](https://docs.google.com/document/d/1Lf_n1_EbEfS3cmpNasGmAM9QI7BHLOI0/edit?usp=sharing&ouid=110138636428360179015&rtpof=true&sd=true)
+* [Proposal PKM-KC](https://docs.google.com/document/d/1Lf_n1_EbEfS3cmpNasGmAM9QI7BHLOI0/edit?usp=sharing&ouid=110138636428360179015&rtpof=true&sd=true)
 * [Github](https://github.com/raf0411/sport-sync-SElovers)
 
 ## ⚙️ Tools
