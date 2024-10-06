@@ -8,6 +8,11 @@ Our SportSync app provides a comprehensive solution to both of these problems. F
 
 More importantly, we understand that exercising is more enjoyable when done with others. We realize that busy schedules often become a barrier for many people to find suitable playmates. That's why we introduce a partner search feature that not only allows you to find people around you with similar interests in specific sports, but also gives you the flexibility to adjust your playing schedule. With this, we aim to make it easier for you to connect with fellow sports enthusiasts, even when daily busyness gets in the way.
 
+## 📂 Project
+* [Figma Design](https://www.figma.com/design/VKnKeYXA9yJBh48kxWMrDP/SportSync?node-id=154-40&t=4EJmYQNBrCFG5AmE-0)
+* [Proposal](https://docs.google.com/document/d/1Lf_n1_EbEfS3cmpNasGmAM9QI7BHLOI0/edit?usp=sharing&ouid=110138636428360179015&rtpof=true&sd=true)
+* [Github](https://github.com/raf0411/sport-sync-SElovers)
+
 ## ⚙️ Tools
 * ReactJS
 * CSS
